@@ -7,6 +7,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     NavigationMenuViewport,
+    navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -29,24 +30,173 @@ export default function Header() {
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
+                                <Link href="/" legacyBehavior passHref>
+                                    <NavigationMenuLink
+                                        className={navigationMenuTriggerStyle()}
+                                    >
+                                        Home
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
                                 <NavigationMenuTrigger>
-                                    Item One
+                                    About Us
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <NavigationMenuLink>
-                                        Link
-                                    </NavigationMenuLink>
+                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                        <li>
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href="/about/mission"
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium">
+                                                        Our Mission
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        Learn about our values
+                                                        and goals
+                                                    </p>
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+                                        <li>
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href="/about/team"
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium">
+                                                        Our Team
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        Meet our leadership team
+                                                    </p>
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+                                    </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>
-                                    Item Two
+                                    Academic
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <NavigationMenuLink>
-                                        Link
-                                    </NavigationMenuLink>
+                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                        <li>
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href="/about/mission"
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium">
+                                                        Our Mission
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        Learn about our values
+                                                        and goals
+                                                    </p>
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+                                        <li>
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href="/about/team"
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium">
+                                                        Our Team
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        Meet our leadership team
+                                                    </p>
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger>
+                                    Student Life
+                                </NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                        <li>
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href="/about/mission"
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium">
+                                                        Our Mission
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        Learn about our values
+                                                        and goals
+                                                    </p>
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+                                        <li>
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href="/about/team"
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium">
+                                                        Our Team
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        Meet our leadership team
+                                                    </p>
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger>
+                                    Admission
+                                </NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                        <li>
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href="/about/mission"
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium">
+                                                        Our Mission
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        Learn about our values
+                                                        and goals
+                                                    </p>
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+                                        <li>
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href="/about/team"
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium">
+                                                        Our Team
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        Meet our leadership team
+                                                    </p>
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+                                    </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                         </NavigationMenuList>
