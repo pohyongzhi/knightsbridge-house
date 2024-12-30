@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
+import Link from 'next/link';
 import { cva } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
 
@@ -79,6 +80,31 @@ NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName;
 
 const NavigationMenuLink = NavigationMenuPrimitive.Link;
 
+// wrapper component for NavigationMenuPrimitive.Link (asChild)
+const NavigationMenuChildLink: React.FC<NavigationMenuChildLinkProps> = ({ title, href, className, description }) => (
+    <NavigationMenuPrimitive.Link asChild>
+        <Link
+            href={href}
+            className={`block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground ${className}`}
+        >
+            <div className="text-sm font-medium">
+                {title}
+            </div>
+            <p className="text-sm text-muted-foreground">
+                {description}
+            </p>
+        </Link>
+    </NavigationMenuPrimitive.Link>
+);
+
+// define Props interface for NavigationMenuChildLink
+interface NavigationMenuChildLinkProps {
+    title: string;
+    href: string;
+    className?: string;
+    description?: string;
+}
+
 const NavigationMenuViewport = React.forwardRef<
     React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
     React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
@@ -94,8 +120,7 @@ const NavigationMenuViewport = React.forwardRef<
         />
     </div>
 ));
-NavigationMenuViewport.displayName =
-    NavigationMenuPrimitive.Viewport.displayName;
+NavigationMenuViewport.displayName = NavigationMenuPrimitive.Viewport.displayName;
 
 const NavigationMenuIndicator = React.forwardRef<
     React.ElementRef<typeof NavigationMenuPrimitive.Indicator>,
@@ -112,8 +137,7 @@ const NavigationMenuIndicator = React.forwardRef<
         <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" />
     </NavigationMenuPrimitive.Indicator>
 ));
-NavigationMenuIndicator.displayName =
-    NavigationMenuPrimitive.Indicator.displayName;
+NavigationMenuIndicator.displayName = NavigationMenuPrimitive.Indicator.displayName;
 
 export {
     navigationMenuTriggerStyle,
@@ -123,6 +147,7 @@ export {
     NavigationMenuContent,
     NavigationMenuTrigger,
     NavigationMenuLink,
+    NavigationMenuChildLink,
     NavigationMenuIndicator,
     NavigationMenuViewport,
 };

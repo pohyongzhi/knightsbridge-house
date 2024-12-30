@@ -4,6 +4,7 @@ import {
     NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
+    NavigationMenuChildLink,
     NavigationMenuList,
     NavigationMenuTrigger,
     NavigationMenuViewport,
@@ -29,6 +30,7 @@ export default function Header() {
                 <div className="hidden md:flex justify-evenly items-center gap-2">
                     <NavigationMenu>
                         <NavigationMenuList>
+
                             <NavigationMenuItem>
                                 <Link href="/" legacyBehavior passHref>
                                     <NavigationMenuLink
@@ -38,6 +40,7 @@ export default function Header() {
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>
+
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>
                                     About Us
@@ -45,35 +48,41 @@ export default function Header() {
                                 <NavigationMenuContent>
                                     <ul className="grid gap-3 p-4 w-[400px]">
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/mission"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Mission
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Learn about our values
-                                                        and goals
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title="Founder's Message"
+                                                href="/about/mission"
+                                                description="Learn about our values and goals"
+                                            />
                                         </li>
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/team"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Team
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Meet our leadership team
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title="Our Story"
+                                                href="/about/story"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="School Values"
+                                                href="/about/values"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="Partnerships"
+                                                href="/about/partnerships"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="Leadership Team"
+                                                href="/about/leaders"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="Accrediation"
+                                                href="/about/accrediaition"
+                                            />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
@@ -119,6 +128,7 @@ export default function Header() {
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
+
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>
                                     Student Life
@@ -159,6 +169,7 @@ export default function Header() {
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
+
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>
                                     Admission
@@ -199,6 +210,7 @@ export default function Header() {
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
+
                         </NavigationMenuList>
                         <NavigationMenuViewport />
                     </NavigationMenu>
