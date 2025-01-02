@@ -1,7 +1,9 @@
+// Import Statements
+import Link from "next/link";
+import Image from "next/image";
 import {
     NavigationMenu,
     NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuChildLink,
@@ -10,215 +12,231 @@ import {
     NavigationMenuViewport,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import Image from "next/image";
 
 export default function Header() {
     return (
         <>
-            <header className="flex justify-between py-5">
-                <Link href="/" className="flex-shrink-0">
+            <header className = "flex justify-between py-5">
+                <Link href = "/" className = "flex-shrink-0">
                     <Image
-                        src="/images/logo/logo.png"
-                        alt="Logo"
-                        width={120}
-                        height={40}
+                        src = "/images/logo/logo.png"
+                        alt = "Logo"
+                        width = {120}
+                        height = {40}
                         priority
                     />
                 </Link>
-                <div className="hidden md:flex justify-evenly items-center gap-2">
+                <div className = "hidden md:flex justify-evenly items-center gap-2">
                     <NavigationMenu>
                         <NavigationMenuList>
-
-                            <NavigationMenuItem>
-                                <Link href="/" legacyBehavior passHref>
+                            {/* HOME */}
+                            <NavigationMenuItem className = "relative">
+                                <Link href = "/" legacyBehavior passHref>
                                     <NavigationMenuLink
-                                        className={navigationMenuTriggerStyle()}
+                                        className = {navigationMenuTriggerStyle()}
                                     >
                                         Home
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>
 
-                            <NavigationMenuItem>
+                            {/* ABOUT US */}
+                            <NavigationMenuItem className = "relative">
                                 <NavigationMenuTrigger>
                                     About Us
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                    <ul className = "grid gap-3 p-4 w-[250px]">
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="Founder's Message"
-                                                href="/about/mission"
-                                                description="Learn about our values and goals"
+                                                title = "Founder's Message"
+                                                href = "/about#message"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="Our Story"
-                                                href="/about/story"
+                                                title = "Our Story"
+                                                href = "/about#story"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="School Values"
-                                                href="/about/values"
+                                                title = "School Values"
+                                                href = "/about#values"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="Partnerships"
-                                                href="/about/partnerships"
+                                                title = "Partnership with Pichayasuksa"
+                                                href = "/about#partnership"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="Leadership Team"
-                                                href="/about/leaders"
+                                                title = "Leadership Team"
+                                                href = "/about#leaders"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="Accrediation"
-                                                href="/about/accrediaition"
+                                                title = "Accreditation"
+                                                href = "/about#accreditation"
                                             />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
-                            <NavigationMenuItem>
+                            {/* ACADEMICS */}
+                            <NavigationMenuItem className = "relative">
                                 <NavigationMenuTrigger>
-                                    Academic
+                                    Academics
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                    <ul className = "grid gap-3 p-4 w-[300px]">
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/mission"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Mission
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Learn about our values
-                                                        and goals
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title = "Our Curriculum"
+                                                href = "/academics/curriculum"
+                                            />
                                         </li>
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/team"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Team
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Meet our leadership team
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title = "Primary Years (Year 1-6)"
+                                                href = "/academics/primary"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "Lower Secondary (Year 7-8)"
+                                                href = "/academics/secondary"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "Language Programs"
+                                                href = "/academics/language-programs"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "STEM Education"
+                                                href = "/academics/stem"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "International Preparation Program"
+                                                href = "/academics/international-preparation-program"
+                                            />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
-                            <NavigationMenuItem>
+                            {/* STUDENT LIFE */}
+                            <NavigationMenuItem className = "relative">
                                 <NavigationMenuTrigger>
                                     Student Life
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                    <ul className = "grid gap-3 p-4 w-[300px]">
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/mission"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Mission
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Learn about our values
-                                                        and goals
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title = "Multicultural Community"
+                                                href = "/student-life/multicultural-community"
+                                            />
                                         </li>
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/team"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Team
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Meet our leadership team
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title = "Extracurricular Activities"
+                                                href = "/student-life/extracurricular-activities"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "Language & Cultural Enrichment"
+                                                href = "/student-life/enrichment"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "School Facilities"
+                                                href = "/student-life/facilities"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "Community Engagement"
+                                                href = "/student-life/community-engagement"
+                                            />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
-                            <NavigationMenuItem>
+                            {/* ADMISSIONS */}
+                            <NavigationMenuItem className = "relative">
                                 <NavigationMenuTrigger>
-                                    Admission
+                                    Admissions
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                    <ul className = "grid gap-3 p-4 w-[250px]">
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/mission"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Mission
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Learn about our values
-                                                        and goals
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title = "Requirements & Process"
+                                                href = "/admissions/requirements"
+                                            />
                                         </li>
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/team"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Team
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Meet our leadership team
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title = "School Fees"
+                                                href = "/admissions/fees"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "Academic Calendar"
+                                                href = "/admissions/calendar"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "Apply Now"
+                                                href = "/admissions/apply"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "Book a School Tour"
+                                                href = "/admissions/tour"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title = "FAQs"
+                                                href = "/admissions/faqs"
+                                            />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
+                            {/* CONTACT US*/}
+                            <NavigationMenuItem className = "relative">
+                                <Link href = "/contact" legacyBehavior passHref>
+                                    <NavigationMenuLink
+                                        className = {navigationMenuTriggerStyle()}
+                                    >
+                                        Contact Us
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
                         </NavigationMenuList>
                         <NavigationMenuViewport />
                     </NavigationMenu>
-                    <Button variant="default" size="default">
-                        Contact us
-                    </Button>
                 </div>
             </header>
         </>
     );
-}
+};
