@@ -48,7 +48,7 @@ export default function About() {
                     */}
                     <div className = "lg:w-2/5 lg:flex lg:justify-end lg:items-end mt-8 lg:mt-0 relative">
                         <Image
-                            src = "/images/hero/hero-main.svg"
+                            src = "/images/about/founder.svg"
                             alt = "Student learning"
                             width = {400}
                             height = {400}
