@@ -54,7 +54,7 @@ export default function Home() {
             </section>
             <section>
                 <div className="flex flex-col max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                    <h2 className="text-center pb-10 text-3xl font-semibold text-brand-secondary">
+                    <h2 className="text-center pb-10 text-3xl font-semibold text-brand-secondary sm:text-center md:text-center lg:text-center">
                         What We Offer
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -100,7 +100,7 @@ export default function Home() {
             </section>
             <section className="w-full bg-brand">
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white flex flex-col">
-                    <h2 className="pb-10 text-3xl font-semibold">
+                    <h2 className="pb-10 text-3xl font-semibold text-center sm:text-start md:text-start lg:text-start">
                         Our Curriculum
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

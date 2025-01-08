@@ -4,20 +4,16 @@ import Image from "next/image"; // To be replaced with the respective images
 
 export default function About() {
     return (
-        <div className = "container mx-auto px-4 py-8 mt-5">
-            <header className = "flex flex-row items-center justify-center text-center mb-5 w-full gap-10">
-                <div className = "mb-2">
-                    <p className = "text-3xl text-gray-600"> Our Aim </p>
-                </div>
-                <div className = "text-gray-700 w-3/4 text-3xl">
-                    <p>
-                        To be a global leader in high-quality, affordable education, ensuring that exceptional learning opportunities are accessible to every child, empowering them to achieve their fullest potential.
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <section className="flex flex-col m-16">
+                    <h2 className = "text-3xl font-semibold mb-4 text-brand-secondary"> Our Aim </h2>
+                    <p className="text-xl">
+                        We aim to be a global leader in high-quality, affordable education, ensuring that exceptional learning opportunities are accessible to every child, empowering them to achieve their fullest potential.
                     </p>
-                </div>
-            </header>
+                </section>
 
-            <section id = "message" className = "mb-12 relative p-28">
-                <h2 className = "text-3xl font-semibold text-purple-800 mb-4"> Founder's Message </h2>
+                <section id = "message" className = "p-16 relative">
+                <h2 className = "text-3xl font-semibold text-brand-secondary mb-4"> Founder's Message </h2>
                 <div className = "flex flex-col lg:flex-row lg:justify-between lg:items-start">
                     <div className = "text-gray-700 leading-relaxed text-left lg:w-3/5">
                         <p className = "mb-4">
@@ -40,12 +36,8 @@ export default function About() {
                         </p>
                         <p>
                             Founder, KBH International School
-                        </p>/
+                        </p>
                     </div>
-                    {/*
-                        1. Image to be replaced with founder's image
-                        2. Ensure proper rounded image
-                    */}
                     <div className = "lg:w-2/5 lg:flex lg:justify-end lg:items-end mt-8 lg:mt-0 relative">
                         <Image
                             src = "/images/about/founder.svg"
@@ -56,7 +48,6 @@ export default function About() {
                     </div>
                 </div>
             </section>
-
             <section id = "story" className = "mb-12 p-16">
                 <div className = "flex flex-col lg:flex-row lg:items-center lg:gap-8">
                     {/*
@@ -72,7 +63,7 @@ export default function About() {
                         />
                     </div>
                     <div className = "lg:w-2/3 ml-5">
-                        <h2 className = "text-3xl font-semibold text-purple-800"> Our Story </h2>
+                        <h2 className = "text-3xl font-semibold text-brand-secondary"> Our Story </h2>
                         <div className = "flex items-center">
                             <h3 className = "text-xl font-semibold text-gray-800 mb-4 mt-2"> Since 2021 </h3>
                             <div className = "flex h-[1px] bg-gray-300 mb-2 ml-4 w-3/4"></div>
@@ -93,7 +84,6 @@ export default function About() {
                     </div>
                 </div>
             </section>
-
             <section id = "values" className = "mb-12 p-16">
                 <h2 className = "text-2xl font-semibold text-gray-800 mb-4"> School Values </h2>
                 <p className = "text-gray-700 leading-relaxed">
