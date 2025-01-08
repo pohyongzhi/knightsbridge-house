@@ -28,7 +28,7 @@ export default function Home() {
                                 creativity, and character.
                             </p>
                             <div className="mt-10">
-                                <Button  variant="brand-secondary" size="lg">
+                                <Button  variant="brandSecondary" size="lg">
                                     Contact us
                                 </Button>
                             </div>
@@ -99,21 +99,41 @@ export default function Home() {
                 </div>
             </section>
             <section className="w-full bg-brand">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
-                    <h2 className="pb-10 text-3xl font-semibold ">
+                <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white flex flex-col">
+                    <h2 className="pb-10 text-3xl font-semibold">
                         Our Curriculum
                     </h2>
-                    <div className="flex min-w-[300px] h-[200px] relative">
-                        <Image src="/images/home/global.jpg" alt="Curriculum" fill className="absolute"/>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                        <div className="flex flex-col text-center">
+                            <div className="flex flex-col min-h-[200px] relative rounded-2xl overflow-hidden bg-white">
+                                <Image src="/images/home/global.jpg" alt="Curriculum" fill className="object-cover"/>
+                            </div>
+                            <p className="text-lg py-4">Global Recognised Curriculum</p>
+                        </div>
+                        <div className="flex flex-col text-center">
+                            <div className="flex flex-col min-h-[200px] relative rounded-2xl overflow-hidden bg-white">
+                                <Image src="/images/home/global.jpg" alt="Curriculum" fill className="object-cover"/>
+                            </div>
+                            <p className="text-lg py-4">Global Recognised Curriculum</p>
+                        </div>
+                        <div className="flex flex-col text-center">
+                            <div className="flex flex-col min-h-[200px] relative rounded-2xl overflow-hidden bg-white">
+                                <Image src="/images/home/global.jpg" alt="Curriculum" fill className="object-cover"/>
+                            </div>
+                            <p className="text-lg py-4">Global Recognised Curriculum</p>
+                        </div>
+                        <div className="flex flex-col text-center">
+                            <div className="flex flex-col min-h-[200px] relative rounded-2xl overflow-hidden bg-white">
+                                <Image src="/images/home/global.jpg" alt="Curriculum" fill className="object-cover"/>
+                            </div>
+                            <p className="text-lg py-4">Global Recognised Curriculum</p>
+                        </div>
+                      
                     </div>
-                    <div className="flex min-w-[300px] h-[200px] relative">
-                        <Image src="/images/home/global.jpg" alt="Curriculum" fill className="absolute"/>
-                    </div>
-                    <div className="flex min-w-[300px] h-[200px] relative">
-                        <Image src="/images/home/global.jpg" alt="Curriculum" fill className="absolute"/>
-                    </div>
-                    <div className="flex min-w-[300px] h-[200px] relative">
-                        <Image src="/images/home/global.jpg" alt="Curriculum" fill className="absolute"/>
+                    <div className="sm:justify-start md:justify-start lg: justify-start mt-10">
+                        <Button variant="brandSecondary" size="lg">
+                            Learn more
+                        </Button>
                     </div>
                 </div>
             </section>
