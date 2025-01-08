@@ -40,7 +40,7 @@ export default function About() {
                         </p>
                         <p>
                             Founder, KBH International School
-                        </p>
+                        </p>/
                     </div>
                     {/*
                         1. Image to be replaced with founder's image

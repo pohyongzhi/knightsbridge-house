@@ -53,45 +53,68 @@ export default function Home() {
                 </div>
             </section>
             <section>
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                    <h2 className="text-center pb-10 text-3xl font-semibold text-brand-secondary">
+                        What We Offer
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <Card >
+                            <CardHeader>
+                                <CardTitle>A positive learning environment</CardTitle>
+                                <CardDescription>Card Description</CardDescription>
+                            </CardHeader>
+                        </Card>
                         <Card>
                             <CardHeader>
                                 <CardTitle>Card Title</CardTitle>
                                 <CardDescription>Card Description</CardDescription>
                             </CardHeader>
-                            <CardContent>
-                                <p>Card Content</p>
-                            </CardContent>
-                            <CardFooter>
-                                <p>Card Footer</p>
-                            </CardFooter>
                         </Card>
                         <Card>
                             <CardHeader>
                                 <CardTitle>Card Title</CardTitle>
-                            <CardDescription>Card Description</CardDescription>
+                                <CardDescription>Card Description</CardDescription>
                             </CardHeader>
-                            <CardContent>
-                                <p>Card Content</p>
-                            </CardContent>
-                            <CardFooter>
-                                <p>Card Footer</p>
-                            </CardFooter>
                         </Card>
                         <Card>
                             <CardHeader>
                                 <CardTitle>Card Title</CardTitle>
-                            <CardDescription>Card Description</CardDescription>
+                                <CardDescription>Card Description</CardDescription>
                             </CardHeader>
-                            <CardContent>
-                                <p>Card Content</p>
-                            </CardContent>
-                            <CardFooter>
-                                <p>Card Footer</p>
-                            </CardFooter>
                         </Card>
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Card Title</CardTitle>
+                                <CardDescription>Card Description</CardDescription>
+                            </CardHeader>
+                        </Card>
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Card Title</CardTitle>
+                                <CardDescription>Card Description</CardDescription>
+                            </CardHeader>
+                        </Card>
+
                     </div>  
+                </div>
+            </section>
+            <section className="w-full bg-brand">
+                <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
+                    <h2 className="pb-10 text-3xl font-semibold ">
+                        Our Curriculum
+                    </h2>
+                    <div className="flex min-w-[300px] h-[200px] relative">
+                        <Image src="/images/home/global.jpg" alt="Curriculum" fill className="absolute"/>
+                    </div>
+                    <div className="flex min-w-[300px] h-[200px] relative">
+                        <Image src="/images/home/global.jpg" alt="Curriculum" fill className="absolute"/>
+                    </div>
+                    <div className="flex min-w-[300px] h-[200px] relative">
+                        <Image src="/images/home/global.jpg" alt="Curriculum" fill className="absolute"/>
+                    </div>
+                    <div className="flex min-w-[300px] h-[200px] relative">
+                        <Image src="/images/home/global.jpg" alt="Curriculum" fill className="absolute"/>
+                    </div>
                 </div>
             </section>
         </main>
