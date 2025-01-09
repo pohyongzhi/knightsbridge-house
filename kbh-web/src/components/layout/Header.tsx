@@ -1,4 +1,5 @@
-// Import Statements
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -12,11 +13,15 @@ import {
     NavigationMenuViewport,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { useState } from "react";
+import { Menu, X } from 'lucide-react'; 
 
 export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <>
-            <header className = "flex justify-between py-5">
+            <header className = "flex items-center justify-between py-5">
                 <Link href = "/" className = "flex-shrink-0">
                     <Image
                         src = "/images/logo/logo.png"
@@ -26,6 +31,57 @@ export default function Header() {
                         priority
                     />
                 </Link>
+                <div className="md:hidden">
+                <button 
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="p-2"
+                    aria-label="Toggle menu"
+                >
+                    {isMenuOpen ? (
+                        <X className="h-6 w-6" /> 
+                    ) : (
+                        <Menu className="h-6 w-6" />
+                    )}
+                </button>
+
+                {/* Mobile Menu Panel */}
+                {isMenuOpen && (
+                    <div className="absolute top-[80px] left-0 right-0 bg-white shadow-lg z-50">
+                        <div className="flex flex-col p-4">
+                            <Link 
+                                href="/" 
+                                className="py-2 px-4 hover:bg-gray-100"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Home
+                            </Link>
+                            
+                            <div className="py-2 px-4">
+                                <p className="font-medium mb-2">About Us</p>
+                                <div className="pl-4 flex flex-col gap-2">
+                                    <Link 
+                                        href="/about#message" 
+                                        className="hover:bg-gray-100 py-1"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        Founder's Message
+                                    </Link>
+                                    <Link 
+                                        href="/about#story" 
+                                        className="hover:bg-gray-100 py-1"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        Our Story
+                                    </Link>
+                                    {/* Add other About Us links */}
+                                </div>
+                            </div>
+                            
+                            {/* Add other sections similarly */}
+                        </div>
+                    </div>
+                )}
+            </div>
                 <div className = "hidden md:flex justify-evenly items-center gap-2">
                     <NavigationMenu>
                         <NavigationMenuList>
