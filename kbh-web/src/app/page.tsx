@@ -8,16 +8,17 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+import { BookHeart, DollarSign, Earth, School, Trophy } from "lucide-react";
 
 export default function Home() {
     return (
         <main>
             <section className="w-full bg-brand">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
                     <div className="flex flex-col md:flex-row gap-8 items-center">
                         <div className="flex flex-col flex-1">
-                            <h1 className="text-4xl md:text-6xl font-bold text-white">
-                                Quality International Education for Everyone
+                            <h1 className="text-3xl md:text-5xl font-bold text-white">
+                                We Provide Quality International Education for Everyone
                             </h1>
                             <p className="mt-4 text-white">
                                 Knightsbridge House, an international school
@@ -27,14 +28,22 @@ export default function Home() {
                                 while developing students' critical thinking,
                                 creativity, and character.
                             </p>
-                            <div className="mt-10">
-                                <Button  variant="brandSecondary" size="lg">
+                            <div className="mt-10 flex justify-center md:justify-start">
+                                <Button className="hover:scale-105 transition-all duration-100" variant="brandSecondary" size="lg">
                                     Contact us
                                 </Button>
                             </div>
                         </div>
-                        <div className="relative w-full md:w-[45%] min-h-[200px] h-48 sm:h-64 md:h-72 lg:h-80">
-                        <picture>
+                        <div className="place-self-center relative aspect-[16/9] w-full max-w-[550px] overflow-hidden rounded-2xl">
+                            <Image
+                                src="images/home/hero-main.svg"
+                                alt="Campus"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        {/* <div className="relative w-full md:w-[45%] min-h-[200px] h-48 sm:h-64 md:h-72 lg:h-80">
+                            <picture>
                                 <source
                                     media="(max-width: 767px)"
                                     srcSet="/images/hero/hero-main-mobile.svg"
@@ -48,58 +57,56 @@ export default function Home() {
                                     priority
                                 />
                             </picture>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
             <section>
-                <div className="flex flex-col max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div className="flex flex-col max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
                     <h2 className="text-center pb-10 text-3xl font-semibold text-brand-secondary sm:text-center md:text-center lg:text-center">
                         What We Offer
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        <Card >
-                            <CardHeader>
+                    <div className="grid grid-cols-1 md:grid-cols-3 p-10 gap-10 bg-brand rounded-3xl">
+                        <Card className="hover:scale-105 transition-all duration-100 ">
+                            <CardHeader className="flex flex-col text-center items-center">
+                                <School size={64} className="text-brand-secondary mb-4"/>
                                 <CardTitle>A positive learning environment</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                                <CardDescription>We foster student success through simple, effective education that sparks curiosity and creativity.</CardDescription>
                             </CardHeader>
                         </Card>
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                        <Card className="hover:scale-105 transition-all duration-100">
+                            <CardHeader className="flex flex-col text-center items-center">
+                                <Earth size={64} className="text-brand-secondary mb-4"/>
+                                <CardTitle>A world-class international curriculum</CardTitle>
+                                <CardDescription>We deliver Cambridge Primary and Lower Secondary education, with Mandarin, Thai, and Singapore Math streams. Our globally recognized program will expand to IGCSE and A-Levels.</CardDescription>
                             </CardHeader>
                         </Card>
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                        <Card className="hover:scale-105 transition-all duration-100">
+                            <CardHeader className="flex flex-col text-center items-center">
+                                <BookHeart size={64} className="text-brand-secondary mb-4"/>
+                                <CardTitle>Inspiring international teaching staff</CardTitle>
+                                <CardDescription>At KBH, we nurture each child's unique potential through dedicated teachers and personalized care, fostering happy, confident learners.</CardDescription>
                             </CardHeader>
                         </Card>
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                        <Card className="hover:scale-105 transition-all duration-100">
+                            <CardHeader className="flex flex-col text-center items-center">
+                                <Trophy size={64} className="text-brand-secondary mb-4"/>
+                                <CardTitle>Holistic extracurricular activities</CardTitle>
+                                <CardDescription>Beyond academics, students enjoy diverse activities including sports, arts, and performing arts in our spacious green campus.</CardDescription>
                             </CardHeader>
                         </Card>
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                        <Card className="hover:scale-105 transition-all duration-100">
+                            <CardHeader className="flex flex-col text-center items-center">
+                                <DollarSign size={64} className="text-brand-secondary mb-4"/>
+                                <CardTitle>Affordable tuition fee</CardTitle>
+                                <CardDescription>We deliver quality international education at competitive rates through efficient operations and smart resource management, without compromising on teaching excellence or facilities.</CardDescription>
                             </CardHeader>
                         </Card>
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
-                            </CardHeader>
-                        </Card>
-
                     </div>  
                 </div>
             </section>
             <section className="w-full bg-brand">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white flex flex-col">
+                <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 text-white flex flex-col">
                     <h2 className="pb-10 text-3xl font-semibold text-center sm:text-start md:text-start lg:text-start">
                         Our Curriculum
                     </h2>
