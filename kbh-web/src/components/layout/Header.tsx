@@ -105,6 +105,12 @@ export default function Header() {
                                     <ul className = "grid gap-3 p-4 w-[250px]">
                                         <li>
                                             <NavigationMenuChildLink
+                                                title = "Our Aim"
+                                                href = "/about#our-aim"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
                                                 title = "Founder's Message"
                                                 href = "/about#message"
                                             />
