@@ -47,7 +47,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className = "relative aspect-square w-full min-w-[200px] max-w-[400px]">
+                <div className = "relative aspect-square w-full min-w-[200px] max-w-[300px]">
                     <Image
                         src = "/images/about/founder.svg"
                         alt = "Student learning"
@@ -63,7 +63,7 @@ export default function About() {
                     <h2 className = "text-3xl font-semibold text-brand-secondary"> Our Story </h2>
                     <div className = "flex items-center">
                         <h3 className = "text-xl font-semibold text-gray-800 mb-4 mt-2"> Since 2021 </h3>
-                        <div className = "flex h-[1px] bg-gray-300 mb-2 ml-4 w-3/4"></div>
+                        <div className = "flex h-[1px] bg-gray-300 mb-2 sm:ml-4 w-3/4"></div>
                     </div>
                     <p>
                         Knightsbridge House International School was founded by Mr. John Fearon 

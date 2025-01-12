@@ -32,56 +32,92 @@ export default function Header() {
                     />
                 </Link>
                 <div className="md:hidden">
-                <button 
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="p-2"
-                    aria-label="Toggle menu"
-                >
-                    {isMenuOpen ? (
-                        <X className="h-6 w-6" /> 
-                    ) : (
-                        <Menu className="h-6 w-6" />
-                    )}
-                </button>
+                    <button 
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="p-2"
+                        aria-label="Toggle menu"
+                    >
+                        {isMenuOpen ? (
+                            <X className="h-6 w-6" /> 
+                        ) : (
+                            <Menu className="h-6 w-6" />
+                        )}
+                    </button>
 
-                {/* Mobile Menu Panel */}
-                {isMenuOpen && (
-                    <div className="absolute top-[80px] left-0 right-0 bg-white shadow-lg z-50">
-                        <div className="flex flex-col p-4">
-                            <Link 
-                                href="/" 
-                                className="py-2 px-4 hover:bg-gray-100"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Home
-                            </Link>
-                            
-                            <div className="py-2 px-4">
-                                <p className="font-medium mb-2">About Us</p>
-                                <div className="pl-4 flex flex-col gap-2">
+                    {/* Mobile Menu Panel */}
+                    {isMenuOpen && (
+                        <div className="absolute top-[80px] left-0 right-0 bg-white shadow-lg z-50">
+                            <div className="flex flex-col p-4">
+                                <Link 
+                                    href="/" 
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Home
+                                </Link>
+                                
+                                {/* <div> */}
                                     <Link 
-                                        href="/about#message" 
-                                        className="hover:bg-gray-100 py-1"
+                                        href="/about" 
+                                        className="py-2 px-4 hover:bg-gray-100"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
-                                        Founder's Message
+                                        About Us
                                     </Link>
-                                    <Link 
-                                        href="/about#story" 
-                                        className="hover:bg-gray-100 py-1"
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        Our Story
-                                    </Link>
-                                    {/* Add other About Us links */}
-                                </div>
+                                    {/* <div className="pl-4 flex flex-col gap-2">
+                                        <Link 
+                                            href="/about#message" 
+                                            className="hover:bg-gray-100 py-1"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            Founder's Message
+                                        </Link>
+                                        <Link 
+                                            href="/about#story" 
+                                            className="hover:bg-gray-100 py-1"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            Our Story
+                                        </Link>
+                                    </div> */}
+                                {/* </div> */}
+
+                                <Link 
+                                    href="/academics" 
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Academics
+                                </Link>
+                                
+                                <Link 
+                                    href="/student-life" 
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Student Life
+                                </Link>
+
+                                <Link 
+                                    href="/admissions" 
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Admissions
+                                </Link>
+
+                                <Link 
+                                    href="/contact" 
+                                    className="py-2 px-4 text-primary hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Contact Us
+                                </Link>
+
                             </div>
-                            
-                            {/* Add other sections similarly */}
                         </div>
-                    </div>
-                )}
-            </div>
+                    )}
+                </div>
                 <div className = "hidden md:flex justify-evenly items-center gap-2">
                     <NavigationMenu>
                         <NavigationMenuList>
@@ -98,9 +134,11 @@ export default function Header() {
 
                             {/* ABOUT US */}
                             <NavigationMenuItem className = "relative">
-                                <NavigationMenuTrigger>
-                                    About Us
-                                </NavigationMenuTrigger>
+                                <Link href = "/about" legacyBehavior passHref>
+                                    <NavigationMenuTrigger>
+                                        About Us
+                                    </NavigationMenuTrigger>
+                                </Link>
                                 <NavigationMenuContent>
                                     <ul className = "grid gap-3 p-4 w-[250px]">
                                         <li>
@@ -151,9 +189,11 @@ export default function Header() {
 
                             {/* ACADEMICS */}
                             <NavigationMenuItem className = "relative">
-                                <NavigationMenuTrigger>
-                                    Academics
-                                </NavigationMenuTrigger>
+                                <Link href = "/academics" legacyBehavior passHref>
+                                    <NavigationMenuTrigger>
+                                        Academics
+                                    </NavigationMenuTrigger>
+                                </Link>
                                 <NavigationMenuContent>
                                     <ul className = "grid gap-3 p-4 w-[300px]">
                                         <li>
@@ -198,9 +238,11 @@ export default function Header() {
 
                             {/* STUDENT LIFE */}
                             <NavigationMenuItem className = "relative">
-                                <NavigationMenuTrigger>
-                                    Student Life
-                                </NavigationMenuTrigger>
+                                <Link href = "/student-life" legacyBehavior passHref>
+                                    <NavigationMenuTrigger>
+                                        Student Life
+                                    </NavigationMenuTrigger>
+                                </Link>
                                 <NavigationMenuContent>
                                     <ul className = "grid gap-3 p-4 w-[300px]">
                                         <li>
@@ -239,9 +281,11 @@ export default function Header() {
 
                             {/* ADMISSIONS */}
                             <NavigationMenuItem className = "relative">
-                                <NavigationMenuTrigger>
-                                    Admissions
-                                </NavigationMenuTrigger>
+                                <Link href = "/admissions" legacyBehavior passHref>
+                                    <NavigationMenuTrigger>
+                                        Admissions
+                                    </NavigationMenuTrigger>
+                                </Link>
                                 <NavigationMenuContent>
                                     <ul className = "grid gap-3 p-4 w-[250px]">
                                         <li>
