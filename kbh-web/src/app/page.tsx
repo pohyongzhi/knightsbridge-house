@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card"
 import { BookHeart, Building, DollarSign, Earth, Instagram, School, Trophy } from "lucide-react";
 import InstagramEmbed from "@/components/home/instagram/ig-embed";
+import TimelineItem from "@/components/home/timeline/TimelineItem";
 
 export default function Home() {
     return (
@@ -45,6 +46,34 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section className="flex justify-center">
+                <ol className="relative w-11/12 max-w-xl mx-auto flex flex-col pl-8 pt-8 pb-8 border-l-2 border-gray-200">
+                    <TimelineItem
+                        icon={
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                        >
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
+                        </svg>
+                        }
+                        description={
+                            <>
+                            <div className="text-black font-semibold text-lg">
+                                A positive learning environment
+                            </div>
+                            <div className="flex items-center text-gray-400">
+                                We foster student success through simple and effective education that sparks curiosity and creativity.
+                            </div>
+                            </>
+                        }
+                    />
+                </ol>
             </section>
             <section>
                 <div className="flex flex-col max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
@@ -100,7 +129,7 @@ export default function Home() {
             </section>
             <section>
                 <div className="flex flex-col max-w-screen-xl mx-auto px-8 sm:px-10 sm:flex-row lg:px-12 py-20">
-                    <div className="flex flex-col width-1/2 sm:">
+                    <div className="flex flex-col width-1/3 sm:">
                         <h2 className="text-center pb-10 text-4xl font-bold text-brand-secondary sm:text-center md:text-center lg:text-center">
                             Our Socials
                         </h2>
