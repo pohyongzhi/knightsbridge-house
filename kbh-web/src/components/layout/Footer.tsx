@@ -65,14 +65,14 @@ export default function Footer() {
                 <div className = "space-y-4 ml-12">
                     <h3 className = "text-lg font-semibold mt-36 ml-4"> FOLLOW US </h3>
                     <div className = "flex space-x-4 mt-4 gap-5">
-                        <Link href = "https://www.google.com" aria-label = "Facebook" className = "hover:text-gray-300 hover:scale-110 transition-transform duration-200">
-                            <Facebook className = "w-6 h-6" />
+                        <Link href = "https://www.facebook.com/people/Knightsbridge-House-Nonthaburi/61570369682424/" aria-label = "Facebook" className = "hover:scale-125 transition-transform duration-200">
+                            <Facebook className = "w-6 h-6 text-white" />
                         </Link>
-                        <Link href = "https://www.google.com" aria-label = "Instagram" className = "hover:text-gray-300 hover:scale-110 transition-transform duration-200">
-                            <Instagram className = "w-6 h-6" />
+                        <Link href = "https://www.instagram.com/knightsbridgehouse/" aria-label = "Instagram" className = "hover:scale-125 transition-transform duration-200">
+                            <Instagram className = "w-6 h-6 text-white" />
                         </Link>
-                        <Link href = "https://www.google.com" aria-label = "Linkedin" className = "hover:text-gray-300 hover:scale-110 transition-transform duration-200">
-                            <Linkedin className = "w-6 h-6" />
+                        <Link href = "https://www.linkedin.com/company/knightsbridge-house/" aria-label = "Linkedin" className = "hover:scale-125 transition-transform duration-200">
+                            <Linkedin className = "w-6 h-6 text-white" />
                         </Link>
                     </div>
                 </div>

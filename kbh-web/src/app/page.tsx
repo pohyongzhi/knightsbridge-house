@@ -1,54 +1,77 @@
-'use client';
+"use client";
 
+// Import Statements
+import Link from "next/link";
 import Image from "next/image";
-import Link from 'next/link';
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import {
-    Card,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import { BookHeart, Building, DollarSign, Earth, Instagram, School, Trophy } from "lucide-react";
-import InstagramEmbed from "@/components/home/instagram/InstagramEmbed";
 import TimelineItem from "@/components/home/timeline/TimelineItem";
+import InstagramEmbed from "@/components/home/instagram/InstagramEmbed";
+import { BookHeart, Building, DollarSign, Earth, Instagram, School, Trophy, Facebook, Linkedin, ChevronUp } from "lucide-react";
 
 export default function Home() {
+    const [showScrollToTop, setShowScrollToTop] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowScrollToTop(window.scrollY > 300);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <main>
-            <section className="w-full" 
-                style={{
-                backgroundImage: "url('/images/home/hero-main.svg')", 
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
+
+            {/* SECTION 1: MAIN */}
+            <section
+                id = "main-section"
+                className = "w-full"
+                style = {{
+                    backgroundImage: "url('/images/home/hero-main.svg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
                 }}
             >
-                <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
-                    <div className="flex flex-col md:flex-row gap-8 items-center">
-                        <div className="flex flex-col flex-1">
-                            <h1 className="text-3xl md:text-5xl font-bold text-white">
+                <div className = "max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
+                    <div className = "flex flex-col md:flex-row gap-8 items-center">
+                        <div className = "flex flex-col flex-1">
+                            <h1 className = "text-3xl md:text-5xl font-bold text-white w-1/2">
                                 We Provide Quality International Education for Everyone
                             </h1>
-                            <p className="mt-4 text-white">
-                                Knightsbridge House, an international school
-                                from Singapore, opens in Nonthaburi, Bangkok in
-                                May 2025. We deliver quality education at
-                                affordable fees, fostering academic excellence
-                                while developing students' critical thinking,
-                                creativity, and character.
+                            <p className = "mt-4 text-white w-1/2 text-lg">
+                                Knightsbridge House, an international school from Singapore, opens in Nonthaburi,
+                                Bangkok in May 2025. We deliver quality education at affordable fees, fostering
+                                academic excellence while developing students' critical thinking, creativity, and character.
                             </p>
-                            <div className="mt-10 flex flex-col gap-3 w-1/3 justify-left sm:flex-row md:justify-start">
-                                <Link href="#what-we-offer" passHref>
-                                    <Button className="hover:scale-105 transition-all duration-100" variant="brandSecondary" size="lg">
-                                        What We Offer
-                                    </Button>
-                                </Link>
-                                <Button className="hover:scale-105 transition-all duration-100" variant="brandSecondary" size="lg">
+                            <div className = "mt-10 flex flex-col gap-8 w-/3 justify-left sm:flex-row md:justify-start">
+                                <Button
+                                    className = "w-1/6 hover:scale-110 transition-all duration-100"
+                                    variant = "brandSecondary"
+                                    size = "lg"
+                                    onClick = {() => document.getElementById("what-we-offer")?.scrollIntoView({ behavior: "smooth" })}
+                                >
+                                    What We Offer
+                                </Button>
+                                <Button
+                                    className = "w-1/6 hover:scale-110 transition-all duration-100"
+                                    variant = "brandSecondary"
+                                    size = "lg"
+                                    onClick = {() => document.getElementById("our-socials")?.scrollIntoView({ behavior: "smooth" })}
+                                >
                                     Our Socials
                                 </Button>
-                                <Button className="hover:scale-105 transition-all duration-100" variant="brandSecondary" size="lg">
-                                    Contact us
+                                <Button
+                                    className = "w-1/6 hover:scale-110 transition-all duration-100"
+                                    variant = "brandSecondary"
+                                    size = "lg"
+                                    onClick = {() => document.getElementById("our-curriculum")?.scrollIntoView({ behavior: "smooth" })}
+                                >
+                                    Our Curriculum
+                                </Button>
+                                <Button className = "w-1/6 hover:scale-110 transition-all duration-100" variant = "brandSecondary" size = "lg">
+                                    Contact Us
                                 </Button>
                             </div>
                         </div>
@@ -56,89 +79,90 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="flex justify-center">
-                <div id="what-we-offer" className="flex flex-col max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20" >
-                    <h2 className="text-center pb-10 text-4xl font-bold text-brand-secondary sm:text-center md:text-center lg:text-center">
+            {/* SECTION 2: WHAT WE OFFER */}
+            <section id = "what-we-offer" className = "flex justify-center">
+                <div className = "flex flex-col max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
+                    <h2 className = "text-center pb-10 text-4xl font-bold text-brand-secondary sm:text-center md:text-center lg:text-center">
                         What Knightsbridge House Offers
                     </h2>
-                    <ol className="relative w-11/12 max-w-3xl mx-auto flex flex-col pl-[30px] pt-8 pb-8 border-l-4 border-brand border-opacity-10">
+                    <ol className = "relative w-11/12 max-w-3xl mx-auto flex flex-col pl-[30px] pt-8 pb-8 border-l-4 border-brand border-opacity-10 gap-8">
                         <TimelineItem
-                            icon={
-                                <School size={64} className="text-brand-secondary" />
+                            icon = {
+                                <School size = {64} className = "text-brand-secondary" />
                             }
-                            description={
+                            description = {
                                 <>
-                                <p className="font-semibold text-lg"> A positive learning environment </p>
-                                <p className="flex items-center text-gray-400">
-                                    We foster student success through simple and effective education 
-                                    that sparks curiosity and creativity.</p>
+                                    <p className = "font-semibold text-lg"> A positive learning environment </p>
+                                    <p className = "flex items-center text-gray-400">
+                                        We foster student success through simple and effective education that sparks curiousity and creativity.
+                                    </p>
                                 </>
                             }
                         />
                         <TimelineItem
-                            icon={
-                                <Earth size={64} className="text-brand-secondary" />
+                            icon = {
+                                <Earth size = {64} className = "text-brand-secondary" />
                             }
-                            description={
+                            description = {
                                 <>
-                                <p className="font-semibold text-lg"> A world-class international curriculum </p>
-                                <p className="flex items-center text-gray-400">
-                                We deliver Cambridge Primary and Lower Secondary education, with Mandarin, 
-                                Thai, and Singapore Math streams. Our globally recognized program 
-                                will expand to IGCSE and A-Levels.</p>
+                                    <p className = "font-semibold text-lg"> A world-class international curriculum </p>
+                                    <p className = "flex items-center text-gray-400">
+                                        We deliver Cambridge Primary and Lower Secondary education, with Mandarin, Thai and Singapore Mathematics streams.
+                                        Our globally recognized program will expand to IGCSE and A-Levels.
+                                    </p>
                                 </>
                             }
                         />
                         <TimelineItem
-                            icon={
-                                <BookHeart size={64} className="text-brand-secondary" />
+                            icon = {
+                                <BookHeart size = {64} className = "text-brand-secondary" />
                             }
-                            description={
+                            description = {
                                 <>
-                                <p className="font-semibold text-lg"> Inspiring international teaching staff </p>
-                                <p className="flex items-center text-gray-400">
-                                At KBH, we nurture each child's unique potential through dedicated teachers 
-                                and personalized care, fostering happy, confident learners.</p>
+                                    <p className = "font-semibold text-lg"> Inspiring international teaching staff </p>
+                                    <p className = "flex items-center text-gray-400">
+                                        At KBH, we nurture each child's unique potential through dedicated teachers and personalized care, fostering happy and confident learners.
+                                    </p>
                                 </>
                             }
                         />
                         <TimelineItem
-                            icon={
-                                <Trophy size={64} className="text-brand-secondary" />
+                            icon = {
+                                <Trophy size = {64} className = "text-brand-secondary" />
                             }
-                            description={
+                            description = {
                                 <>
-                                <p className="font-semibold text-lg"> Holistic extracurricular activities</p>
-                                <p className="flex items-center text-gray-400">
-                                Beyond academics, students enjoy diverse activities including sports,
-                                 arts, and performing arts in our spacious green campus.</p>
+                                    <p className = "font-semibold text-lg"> Holistic extracurricular activities </p>
+                                    <p className = "flex items-center text-gray-400">
+                                        Beyond academics, students enjoy diverse activities including sports, arts and performing arts in our spacious green campus.
+                                    </p>
                                 </>
                             }
                         />
                         <TimelineItem
-                            icon={
-                                <DollarSign size={64} className="text-brand-secondary" />
+                            icon = {
+                                <DollarSign size = {64} className = "text-brand-secondary" />
                             }
-                            description={
+                            description = {
                                 <>
-                                <p className="font-semibold text-lg"> Affordable tuition fee </p>
-                                <p className="flex items-center text-gray-400">
-                                We deliver quality international education at competitive rates through efficient 
-                                operations and smart resource management, without compromising on teaching 
-                                excellence or facilities.</p>
+                                    <p className = "font-semibold text-lg"> Affordable tuition fees </p>
+                                    <p className = "flex items-center text-gray-400">
+                                        We deliver quality international education at competitive rates through efficient operations and smart resource manahement,
+                                        without compromising on teaching excellence or facilities.
+                                    </p>
                                 </>
                             }
                         />
                         <TimelineItem
-                            icon={
-                                <Building size={64} className="text-brand-secondary" />
+                            icon = {
+                                <Building size = {64} className = "text-brand-secondary" />
                             }
-                            description={
+                            description = {
                                 <>
-                                <p className="font-semibold text-lg"> Modern facilities </p>
-                                <p className="flex items-center text-gray-400">
-                                Our campus combines academic and recreational facilities, from modern classrooms 
-                                and labs to sports amenities including a pool and multi-purpose court.</p>
+                                    <p className = "font-semibold text-lg"> Modern facilities </p>
+                                    <p className = "flex items-center text-gray-400">
+                                        Our campus combines academic and recreational activities, from modern classrooms and labs to sports amenities, including a pool and multi-purpose court.
+                                    </p>
                                 </>
                             }
                         />
@@ -146,134 +170,120 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Old 'What We Offer' Section */}
-            {/* <section>
-                <div className="flex flex-col max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
-                    <h2 className="text-center pb-10 text-4xl font-bold text-brand-secondary sm:text-center md:text-center lg:text-center">
-                        What We Offer
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 p-10 gap-10 bg-brand rounded-3xl">
-                        <Card className="hover:scale-105 transition-all duration-100 ">
-                            <CardHeader className="flex flex-col text-center items-center">
-                                <School size={64} className="text-brand-secondary mb-4" />
-                                <CardTitle>A positive learning environment</CardTitle>
-                                <CardDescription>We foster student success through simple, effective education that sparks curiosity and creativity.</CardDescription>
-                            </CardHeader>
-                        </Card>
-                        <Card className="hover:scale-105 transition-all duration-100">
-                            <CardHeader className="flex flex-col text-center items-center">
-                                <Earth size={64} className="text-brand-secondary mb-4" />
-                                <CardTitle>A world-class international curriculum</CardTitle>
-                                <CardDescription>We deliver Cambridge Primary and Lower Secondary education, with Mandarin, Thai, and Singapore Math streams. Our globally recognized program will expand to IGCSE and A-Levels.</CardDescription>
-                            </CardHeader>
-                        </Card>
-                        <Card className="hover:scale-105 transition-all duration-100">
-                            <CardHeader className="flex flex-col text-center items-center">
-                                <BookHeart size={64} className="text-brand-secondary mb-4" />
-                                <CardTitle>Inspiring international teaching staff</CardTitle>
-                                <CardDescription>At KBH, we nurture each child's unique potential through dedicated teachers and personalized care, fostering happy, confident learners.</CardDescription>
-                            </CardHeader>
-                        </Card>
-                        <Card className="hover:scale-105 transition-all duration-100">
-                            <CardHeader className="flex flex-col text-center items-center">
-                                <Trophy size={64} className="text-brand-secondary mb-4" />
-                                <CardTitle>Holistic extracurricular activities</CardTitle>
-                                <CardDescription>Beyond academics, students enjoy diverse activities including sports, arts, and performing arts in our spacious green campus.</CardDescription>
-                            </CardHeader>
-                        </Card>
-                        <Card className="hover:scale-105 transition-all duration-100">
-                            <CardHeader className="flex flex-col text-center items-center">
-                                <DollarSign size={64} className="text-brand-secondary mb-4" />
-                                <CardTitle>Affordable tuition fee</CardTitle>
-                                <CardDescription>We deliver quality international education at competitive rates through efficient operations and smart resource management, without compromising on teaching excellence or facilities.</CardDescription>
-                            </CardHeader>
-                        </Card>
-                        <Card className="hover:scale-105 transition-all duration-100">
-                            <CardHeader className="flex flex-col text-center items-center">
-                                <Building size={64} className="text-brand-secondary mb-4" />
-                                <CardTitle>Modern facilities</CardTitle>
-                                <CardDescription>    Our campus combines academic and recreational facilities, from modern classrooms and labs to sports amenities including a pool and multi-purpose court.
-                                </CardDescription>
-                            </CardHeader>
-                        </Card>
+            {/* SECTION 3: OUR SOCIALS */}
+            <section
+                id = "our-socials"
+                style = {{ backgroundColor: "rgba(180, 135, 225, 0.5)" }}
+            >
+                <div className = "flex flex-col max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-12 py-20 gap-12 sm:flex-row items-center">
+                    <div className = "order-2 sm:order-1 w-full sm:w-1/2 flex justify-center">
+                        <div className = "bg-white rounded-lg shadow-lg p-6 w-full">
+                            <div className = "rounded overflow-hidden">
+                                <InstagramEmbed embedLink = "https://www.instagram.com/p/CXNEk9Jv9UM/" />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section> */}
-
-            <section>
-                <div className="flex flex-col max-w-screen-xl mx-auto px-4 gap-2 sm:px-10 sm:flex-row lg:px-12 py-20">
-                    <div className="flex flex-col width-1/4 mx-auto justify-start sm:width-1/4 md:width-1/4">
-                        <h2 className="text-center pb-10 text-4xl font-bold text-brand-secondary sm:text-center md:text-center lg:text-center">
-                            Our Socials
-                        </h2>
-                        <p className="mx-auto text-center mb-4 sm:w-1/2">
-                            Dive into moments from their day-to-day activities, achievements, and special events. 
-                            Celebrate milestones, explore their learning adventures, and feel closer to their school journey—all at your fingertips!
+                    <div className = "order-1 sm:order-2 flex flex-col w-full sm:w-1/2 px-4">
+                        <h2 className = "text-left text-6xl text-white font-bold text-brand-secondary mb-4"> Our Socials </h2>
+                        <p className = "text-left text-xl mb-6 font-medium w-full">
+                            Dive into moments from their day-to-day activities, achievements, and special events. Celebrate milestones, explore their learning adventures, and feel closer to their school journey - all at your fingertips!
                         </p>
-                    </div>
-                    <div>
-                        <InstagramEmbed embedLink="https://www.instagram.com/p/CXNEk9Jv9UM/?utm_source=ig_embed&amp;utm_campaign=loading" />
+                        <div className = "flex items-center gap-6">
+                            <button 
+                                className = "bg-purple-800 text-white py-2 px-6 rounded-[12px] flex-shrink-0 w-1/2 hover:scale-110 transition-transform duration-300"
+                                style = {{ lineHeight: "1.5", height: "40px" }}
+                            >
+                                Call to action
+                            </button>
+                            <div className = "flex items-center gap-4">
+                                <Link href = "https://www.facebook.com/people/Knightsbridge-House-Nonthaburi/61570369682424/" aria-label = "Facebook" className = "hover:scale-125 transition-transform duration-200">
+                                    <Facebook className = "w-6 h-6 text-purple-800" />
+                                </Link>
+                                <Link href = "https://www.instagram.com/knightsbridgehouse/" aria-label = "Instagram" className = "hover:scale-125 transition-transform duration-200">
+                                    <Instagram className = "w-6 h-6 text-purple-800" />
+                                </Link>
+                                <Link href = "https://www.linkedin.com/company/knightsbridge-house/" aria-label = "Linkedin" className = "hover:scale-125 transition-transform duration-200">
+                                    <Linkedin className = "w-6 h-6 text-purple-800" />
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section className="w-full bg-brand">
-                <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 text-white flex flex-col">
-                    <h2 className="pb-10 text-4xl font-bold text-center sm:text-start md:text-start lg:text-start">
-                        Our Curriculum
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                        <div className="flex flex-col text-center font-semibold rounded-md">
-                            <div className="place-self-center relative aspect-[16/9] w-full max-w-[550px] overflow-hidden rounded-md shadow-xl">
-                                <Image
-                                    src="images/home/curriculum-globally-recognised-education.jpg"
-                                    alt="Curriculum"
-                                    fill
-                                    className="object-cover"
-                                />
+
+            {/* SECTION 4: OUR CURRICULUM */}
+            <section id = "our-curriculum" className = "bg-white py-12 mb-16">
+                <div className = "max-w-6xl mx-auto text-center">
+                    <h2 className = "text-5xl font-semibold text-purple-600 mb-8 text-left"> Our <br /> Curriculum </h2>
+                    <div className = "grid grid-cols-2 gap-40 relative">
+                        <div className = "bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
+                            <Image
+                                src = "/images/home/curriculum-globally-recognised-education.jpg"
+                                alt = "Globally Recognised Education"
+                                width = {100}
+                                height = {100}
+                                className = "object-cover w-full"
+                            />
+                            <div className = "p-4">
+                                <h3 className = "text-lg font-bold text-center text-purple-800"> Globally Recognised Education </h3>
                             </div>
-                            <p className="text-2xl py-4">Comprehensive Education</p>
                         </div>
-                        <div className="flex flex-col text-center font-semibold">
-                            <div className="place-self-center relative aspect-[16/9] w-full max-w-[550px] overflow-hidden rounded-2xl shadow-xl">
-                                <Image
-                                    src="images/home/curriculum-comprehensive-education.jpg"
-                                    alt="Curriculum"
-                                    fill
-                                    className="object-cover"
-                                />
+                        <div className = "bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
+                            <Image
+                                src = "/images/home/curriculum-comprehensive-education.jpg"
+                                alt = "Comprehensive Education"
+                                width = {100}
+                                height = {100}
+                                className = "object-cover w-full"
+                            />
+                            <div className = "p-4">
+                                <h3 className = "text-lg font-bold text-center text-purple-800"> Comprehensive Education </h3>
                             </div>
-                            <p className="text-2xl py-4">Global Recognised Curriculum</p>
                         </div>
-                        <div className="flex flex-col text-center font-semibold">
-                            <div className="place-self-center relative aspect-[16/9] w-full max-w-[550px] overflow-hidden rounded-2xl shadow-xl">
-                                <Image
-                                    src="images/home/curriculum-trilingual-curriculum.jpg"
-                                    alt="Curriculum"
-                                    fill
-                                    className="object-cover"
-                                />
+                        <div className = "bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
+                            <Image
+                                src = "/images/home/curriculum-language-support-programs.jpg"
+                                alt = "Language Support Programs"
+                                width = {100}
+                                height = {100}
+                                className = "object-cover w-full"
+                            />
+                            <div className = "p-4">
+                                <h3 className = "text-lg font-bold text-center text-purple-800"> Language Support Programs </h3>
                             </div>
-                            <p className="text-2xl py-4">Trilingual Curriculum</p>
                         </div>
-                        <div className="flex flex-col text-center font-semibold">
-                            <div className="place-self-center relative aspect-[16/9] w-full max-w-[550px] overflow-hidden rounded-2xl shadow-xl">
-                                <Image
-                                    src="images/home/curriculum-language-support-programs.jpg"
-                                    alt="Curriculum"
-                                    fill
-                                    className="object-cover"
-                                />
+                        <div className = "bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
+                            <Image
+                                src = "/images/home/curriculum-trilingual-curriculum.jpg"
+                                alt = "Trilingual Education"
+                                width = {100}
+                                height = {100}
+                                className = "object-cover w-full"
+                            />
+                            <div className = "p-4">
+                                <h3 className = "text-lg font-bold text-center text-purple-800"> Trilingual Education </h3>
                             </div>
-                            <p className="text-2xl py-4">Language Support Programmes</p>
                         </div>
-                    </div>
-                    <div className="flex justify-center sm:justify-start md:justify-start lg:justify-start mt-10">
-                        <Button variant="brandSecondary" size="lg">
-                            Learn more
-                        </Button>
+                        <div className = "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <Image
+                                src = "/images/logo/logo-no-words-purple.png"
+                                alt = "KBH Logo"
+                                width = {180}
+                                height = {180}
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
+            {showScrollToTop && (
+                <button
+                    onClick = {() => document.getElementById("main-section")?.scrollIntoView({ behavior: "smooth" })}
+                    className = "fixed bottom-8 right-8 bg-purple-500 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition"
+                    aria-label = "Scroll to top"
+                >
+                    <ChevronUp size = {28} />
+                </button>
+            )}
         </main>
     );
-}
+};

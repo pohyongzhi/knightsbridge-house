@@ -9,7 +9,7 @@ const InstagramEmbed: React.FC<InstagramEmbedProps> = ({ embedLink }) => {
     // Dynamically load the Instagram embed script
     const script = document.createElement("script");
     script.async = true;
-    script.src = "//www.instagram.com/embed.js";
+    script.src = "https://www.instagram.com/embed.js";
     document.body.appendChild(script);
 
     return () => {
