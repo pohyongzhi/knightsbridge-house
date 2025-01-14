@@ -45,7 +45,7 @@ export default function Footer() {
                 </div>
 
                 {/* SINGAPORE BRANCH DETAILS */}
-                <div className = "ml-5">
+                <div>
                     <h3 className = "text-lg font-semibold mb-3"> SINGAPORE </h3>
                     <p className = "flex items-center text-sm">
                         <Mail className = "w-4 h-4 mr-2" />

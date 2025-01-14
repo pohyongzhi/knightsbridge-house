@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -9,7 +10,7 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { BookHeart, Building, DollarSign, Earth, Instagram, School, Trophy } from "lucide-react";
-import InstagramEmbed from "@/components/home/instagram/ig-embed";
+import InstagramEmbed from "@/components/home/instagram/InstagramEmbed";
 import TimelineItem from "@/components/home/timeline/TimelineItem";
 
 export default function Home() {
@@ -38,9 +39,11 @@ export default function Home() {
                                 creativity, and character.
                             </p>
                             <div className="mt-10 flex flex-col gap-3 w-1/3 justify-left sm:flex-row md:justify-start">
-                                <Button className="hover:scale-105 transition-all duration-100" variant="brandSecondary" size="lg" href="#what-we-offer">
-                                    What We Offer
-                                </Button>
+                                <Link href="#what-we-offer" passHref>
+                                    <Button className="hover:scale-105 transition-all duration-100" variant="brandSecondary" size="lg">
+                                        What We Offer
+                                    </Button>
+                                </Link>
                                 <Button className="hover:scale-105 transition-all duration-100" variant="brandSecondary" size="lg">
                                     Our Socials
                                 </Button>
