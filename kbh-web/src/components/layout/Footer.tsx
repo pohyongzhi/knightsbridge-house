@@ -3,80 +3,118 @@
 // Import Statements
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Mail, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Mail, Linkedin, MapPin, Calendar, Clock } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className = "bg-purple-700 text-white py-10">
-            <div className = "container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
+        <footer className="bg-brand-secondary text-white py-10 grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
+            {/* KBH LOGO AND NAME SECTION */}
+            <div className="flex flex-col items-center">
+                <Image
+                    src="/images/logo/logo-no-words-white.png"
+                    alt="Knightsbridge House"
+                    width={125}
+                    height={125}
+                    className="object-contain"
+                />
+                <h2 className="text-2xl font-bold"> Knightsbridge House </h2>
+                <p className="text-md">
+                    Quality Education for Everyone
+                </p>
+            </div>
 
-                {/* KBH LOGO AND NAME SECTION */}
-                <div className = "space-y-1">
-                    <Image
-                        src = "/images/logo/logo-no-words-white.png"
-                        alt = "Knightsbridge House"
-                        width = {125}
-                        height = {125}
-                        className = "object-contain"
-                    />
-                    <h2 className = "text-3xl font-bold"> Knightsbridge House </h2>
-                    <p className = "text-2xl">
-                        Quality Education
-                        <br />
-                        for Everyone
-                    </p>
-                </div>
-
-                {/* THAILAND BRANCH DETAILS */}
-                <div>
-                    <h3 className = "text-lg font-semibold mb-3"> THAILAND </h3>
-                    <p className = "flex items-center text-sm">
-                        <Mail className = "w-4 h-4 mr-2" />
-                        <a href = "mailto:admissions@kbh.co.th" className = "hover:underline">
+            {/* THAILAND BRANCH DETAILS */}
+            <div className="flex flex-col justify-between gap-4">
+                <div className="grid gap-2">
+                    <h3 className="text-lg font-semibold">THAILAND</h3>
+                    <div className="flex items-start gap-2 text-sm">
+                        <Mail size={16} className="flex-shrink-0" />
+                        <a href="mailto:admissions@kbh.co.th" className="hover:underline">
                             admissions@kbh.co.th
                         </a>
-                    </p>
-                    <p className = "text-sm mt-2">
-                        94-3 Sukha Pracha San 3 Lane, Bang Phut Sub-district, Pak Kret District, Nonthaburi 11120, Thailand
-                    </p>
-                    <h3 className = "text-lg font-semibold mt-9 mb-3"> HOURS </h3>
-                    <p className = "text-sm"> Monday - Friday </p>
-                    <p className = "text-sm mt-2"> 0800 - 1700 </p>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                        <MapPin size={16} className="flex-shrink-0" />
+                        <p className="text-sm">
+                            94-3 Sukha Pracha San 3 Lane, Bang Phut Sub-district, Pak Kret District, Nonthaburi 11120, Thailand
+                        </p>
+                    </div>
                 </div>
 
-                {/* SINGAPORE BRANCH DETAILS */}
-                <div>
-                    <h3 className = "text-lg font-semibold mb-3"> SINGAPORE </h3>
-                    <p className = "flex items-center text-sm">
-                        <Mail className = "w-4 h-4 mr-2" />
-                        <a href = "mailto:admissions@kbh.edu.sg" className = "hover:underline">
-                            admissions@kbh.edu.sg
-                        </a>
-                    </p>
-                    <p className = "text-sm mt-2">
-                        67 Jalan Bukit Merah, Connection One, Tower 4 #02-15, S(150167), Singapore
-                    </p>
-                    <h3 className = "text-lg font-semibold mt-9 mb-3"> HOURS </h3>
-                    <p className = "text-sm"> Monday - Friday </p>
-                    <p className = "text-sm mt-2"> 0800 - 1730 </p>
-                </div>
-
-                {/* FOLLOW US SECTION */}
-                <div className = "space-y-4 ml-12">
-                    <h3 className = "text-lg font-semibold mt-36 ml-4"> FOLLOW US </h3>
-                    <div className = "flex space-x-4 mt-4 gap-5">
-                        <Link href = "https://www.facebook.com/people/Knightsbridge-House-Nonthaburi/61570369682424/" aria-label = "Facebook" className = "hover:scale-125 transition-transform duration-200">
-                            <Facebook className = "w-6 h-6 text-white" />
-                        </Link>
-                        <Link href = "https://www.instagram.com/knightsbridgehouse/" aria-label = "Instagram" className = "hover:scale-125 transition-transform duration-200">
-                            <Instagram className = "w-6 h-6 text-white" />
-                        </Link>
-                        <Link href = "https://www.linkedin.com/company/knightsbridge-house/" aria-label = "Linkedin" className = "hover:scale-125 transition-transform duration-200">
-                            <Linkedin className = "w-6 h-6 text-white" />
-                        </Link>
+                <div className="grid gap-2">
+                    <h3 className="text-lg font-semibold">HOURS (THAILAND)</h3>
+                    <div className="flex items-center gap-2 text-sm">
+                        <Calendar size={16} className="flex-shrink-0" />
+                        <p className="text-sm"> Monday - Friday </p>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                        <Clock size={16} className="flex-shrink-0" />
+                        <p className="text-sm"> 0800 - 1700 </p>
                     </div>
                 </div>
             </div>
-        </footer>
+
+            {/* SINGAPORE BRANCH DETAILS */}
+            {/* <div className="flex flex-col justify-between gap-4">
+                <div className="grid gap-2">
+                    <h3 className="text-lg font-semibold">SINGAPORE</h3>
+                    <div className="flex items-center gap-2 text-sm">
+                        <Mail size={16} className="flex-shrink-0" />
+                        <a href="mailto:admissions@kbh.edu.sg" className="hover:underline">
+                            admissions@kbh.edu.sg
+                        </a>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                        <MapPin size={16} className="flex-shrink-0" />
+                        <p className="text-sm">
+                            67 Jalan Bukit Merah, Connection One, Tower 4 #02-15, S(150167), Singapore
+                        </p>
+                    </div>
+                </div>
+                <div className="grid gap-2">
+                    <h3 className="text-lg font-semibold">HOURS (SINGAPORE)</h3>
+                    <div className="flex items-center gap-2 text-sm">
+                        <Calendar size={16} className="flex-shrink-0" />
+                        <p className="text-sm"> Monday - Friday </p>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                        <Clock size={16} className="flex-shrink-0" />
+                        <p className="text-sm"> 0800 - 1730 </p>
+                    </div>
+                </div>
+            </div > */}
+
+            {/* MAP SECTION */}
+            <div className="flex flex-col gap-2" >
+                <h3 className="text-lg font-semibold">LOCATE US</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7863343243175!2d103.8336150759676!3d1.3031887986844604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19917faf0385%3A0x6045b05b1a1de513!2sKnightsbridge!5e0!3m2!1sen!2ssg!4v1736924230098!5m2!1sen!2ssg"
+                    width="100%"
+                    height="150"
+                    className="rounded-lg border-0"
+                    loading="lazy"
+                    allowFullScreen={true}
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Knightsbridge House Thailand Location"
+                    aria-label="Google Maps showing location of Knightsbridge House Thailand"
+                />
+            </div>
+
+            {/* FOLLOW US SECTION */}
+            <div className="flex flex-col gap-2" >
+                <h3 className="text-lg font-semibold">FOLLOW US</h3>
+                <div className="flex gap-5">
+                    <Link href="https://www.facebook.com/people/Knightsbridge-House-Nonthaburi/61570369682424/" aria-label="Facebook" className="hover:scale-125 transition-transform duration-200">
+                        <Facebook className="w-6 h-6 text-white" />
+                    </Link>
+                    <Link href="https://www.instagram.com/knightsbridgehouse/" aria-label="Instagram" className="hover:scale-125 transition-transform duration-200">
+                        <Instagram className="w-6 h-6 text-white" />
+                    </Link>
+                    <Link href="https://www.linkedin.com/company/knightsbridge-house/" aria-label="Linkedin" className="hover:scale-125 transition-transform duration-200">
+                        <Linkedin className="w-6 h-6 text-white" />
+                    </Link>
+                </div>
+            </div >
+        </footer >
     );
 };

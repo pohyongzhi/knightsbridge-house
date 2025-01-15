@@ -11,19 +11,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
-}: Readonly <{
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang = "en">
-            <body className = "min-h-screen bg-background">
-                <div className = "max-w-screen-xl mx-auto sm:px-6 lg:px-8">
+        <html lang="en">
+            <body className="min-h-screen bg-background">
+                <div className="max-w-screen-xl mx-auto sm:px-6 lg:px-8">
                     <Header />
                 </div>
-                <main>
+                <main className="flex-grow">
                     {children}
                 </main>
-                <Footer />
+                <div className="mx-auto">
+                    <Footer />
+                </div>
             </body>
         </html>
     );
