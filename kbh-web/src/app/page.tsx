@@ -96,7 +96,7 @@ export default function Home() {
                 <h2 className="text-center pb-10 text-4xl font-bold text-brand-secondary">
                     What Knightsbridge House Offers
                 </h2>
-                <ol className="max-w-[600px] mx-auto ml-12 sm:ml-[100px] md:ml-[200px] lg:ml-[320px] flex flex-col pl-[30px] border-l-4 border-brand border-opacity-10 gap-8">
+                <ol className="max-w-[600px] mx-auto ml-[3rem] sm:ml-[10rem] md:ml-[13rem] lg:ml-[21rem] flex flex-col pl-[30px] border-l-4 border-brand border-opacity-10 gap-8">
                     <TimelineItem
                         icon={
                             <School size={64} className="text-brand-secondary" />
@@ -225,10 +225,10 @@ export default function Home() {
             </section>
 
             {/* SECTION 4: OUR CURRICULUM */}
-            <section id="our-curriculum" className="bg-white py-12 mb-16">
-                <div className="max-w-6xl mx-auto text-center">
-                    <h2 className="text-5xl font-semibold text-purple-600 mb-8 text-left"> Our <br /> Curriculum </h2>
-                    <div className="grid grid-cols-2 gap-40 relative">
+            <section id="our-curriculum" className="bg-white max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
+                <div className="max-mx-auto text-center">
+                    <h2 className="text-5xl font-semibold text-brand-secondary mb-8"> Our <br /> Curriculum </h2>
+                    <div className="grid md:grid-cols-2 gap-10 md:gap-10 lg:gap-40 relative">
                         <div className="bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
                             <Image
                                 src="/images/home/curriculum-globally-recognised-education.jpg"
@@ -277,7 +277,7 @@ export default function Home() {
                                 <h3 className="text-lg font-bold text-center text-purple-800"> Trilingual Education </h3>
                             </div>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
                             <Image
                                 src="/images/logo/logo-no-words-purple.png"
                                 alt="KBH Logo"
