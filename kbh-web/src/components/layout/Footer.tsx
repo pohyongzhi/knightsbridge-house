@@ -86,7 +86,7 @@ export default function Footer() {
 
             {/* MAP SECTION */}
             <div className="flex flex-col gap-2" >
-                <h3 className="text-lg font-semibold">LOCATE US</h3>
+                <h3 className="text-lg font-semibold">LOCATE US ON GOOGLE MAPS</h3>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7863343243175!2d103.8336150759676!3d1.3031887986844604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19917faf0385%3A0x6045b05b1a1de513!2sKnightsbridge!5e0!3m2!1sen!2ssg!4v1736924230098!5m2!1sen!2ssg"
                     width="100%"
