@@ -185,26 +185,29 @@ export default function Home() {
                 id="our-socials"
                 style={{ backgroundColor: "rgba(180, 135, 225, 0.5)" }}
             >
-                <div className="flex flex-col max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-12 py-20 gap-12 sm:flex-row items-center">
-                    <div className="order-2 sm:order-1 w-full sm:w-1/2 flex justify-center">
-                        <div className="bg-white rounded-lg shadow-lg p-6 w-full">
+                <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-12 py-20 gap-12 items-center justify-center">
+                    {/* Appear only on mobile */}
+                    <h2 className="text-left text-5xl font-bold text-brand mb-4 md:hidden"> Our Socials </h2>
+                    <div className="flex justify-center">
+                        <div className="bg-white rounded-lg shadow-lg p-6">
                             <div className="rounded overflow-hidden">
                                 <InstagramEmbed embedLink="https://www.instagram.com/p/CXNEk9Jv9UM/" />
                             </div>
                         </div>
                     </div>
-                    <div className="order-1 sm:order-2 flex flex-col w-full sm:w-1/2 px-4">
-                        <h2 className="text-left text-6xl text-white font-bold text-brand-secondary mb-4"> Our Socials </h2>
-                        <p className="text-left text-xl mb-6 font-medium w-full">
+                    <div className="flex flex-col px-4 max-w-[600px]">
+                        <h2 className="hidden md:block text-3xl md:text-5xl font-bold text-brand mb-4"> Our Socials </h2>
+                        <p className="text-xl mb-6 font-medium">
                             Dive into moments from their day-to-day activities, achievements, and special events. Celebrate milestones, explore their learning adventures, and feel closer to their school journey - all at your fingertips!
                         </p>
-                        <div className="flex items-center gap-6">
-                            <button
-                                className="bg-purple-800 text-white py-2 px-6 rounded-[12px] flex-shrink-0 w-1/2 hover:scale-110 transition-transform duration-300"
+                        <div className="flex flex-col md:flex-row items-center gap-6">
+                            <Button
+                                className="text-white py-2 px-6 rounded-[12px] hover:scale-110 transition-transform duration-300"
+                                variant="brandSecondary"
                                 style={{ lineHeight: "1.5", height: "40px" }}
                             >
                                 Call to action
-                            </button>
+                            </Button>
                             <div className="flex items-center gap-4">
                                 <Link href="https://www.facebook.com/people/Knightsbridge-House-Nonthaburi/61570369682424/" aria-label="Facebook" className="hover:scale-125 transition-transform duration-200">
                                     <Facebook className="w-6 h-6 text-purple-800" />
