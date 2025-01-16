@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        madimi: ['Madimi One', 'sans-serif']
+      },
       colors: {
         brand: {
           DEFAULT: 'hsl(var(--brand))',

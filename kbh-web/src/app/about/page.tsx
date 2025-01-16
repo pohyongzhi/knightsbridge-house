@@ -27,54 +27,56 @@ export default function About() {
       </section>
 
       {/* Founder's Message */}
-      <section className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center bg-brand-tertiary">
-        <div className="grid">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-secondary mb-4">
-            Founder's Message
-          </h2>
-          <div className="flex flex-col md:flex-row">
-            <div className="text-gray-700">
-              <p className="mb-4">
-                As a lifelong entrepreneur and a father, I have always been
-                driven by the belief that quality education should be both
-                excellent and accessible. This belief inspired me to establish
-                Knightsbridge House (KBH) International School in Singapore,
-                built on the foundation of providing exceptional academic
-                programs that empower students to excel globally.
-              </p>
-              <p className="mb-4">
-                Drawing from my experience in founding successful ventures,
-                including Invictus International School, I’ve seen firsthand how
-                a strong educational framework can transform lives. At KBH, we
-                combine the globally recognized Cambridge curriculum with
-                Singapore Math and Mandarin with a nurturing environment,
-                enabling students to thrive academically and personally.
-              </p>
-              <p className="mb-4">
-                We are excited to start our 1st International School campus in
-                Nonthaburi, Thailand, bringing “Quality International Education
-                for Everyone” from Singapore, and I look forward to greeting all
-                of you.
-              </p>
-              <p className="mb-4">
-                Join us for a school tour to find out more about KBH
-                (Nonthaburi). Share in our passion for learning, and belief that
-                quality education should be a right and not a privilege.
-                Education changes the world, come and see how we do it!
-              </p>
-              <p>Warm regards,</p>
-              <p className="font-semibold">John Fearon</p>
-              <p>Founder, KBH International School</p>
+      <section className="w-full bg-brand-tertiary">
+        <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center bg-brand-tertiary">
+          <div className="grid">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-secondary mb-4">
+              Founder's Message
+            </h2>
+            <div className="flex flex-col md:flex-row">
+              <div className="text-gray-700 text-lg">
+                <p className="mb-4">
+                  As a lifelong entrepreneur and a father, I have always been
+                  driven by the belief that quality education should be both
+                  excellent and accessible. This belief inspired me to establish
+                  Knightsbridge House (KBH) International School in Singapore,
+                  built on the foundation of providing exceptional academic
+                  programs that empower students to excel globally.
+                </p>
+                <p className="mb-4">
+                  Drawing from my experience in founding successful ventures,
+                  including Invictus International School, I’ve seen firsthand how
+                  a strong educational framework can transform lives. At KBH, we
+                  combine the globally recognized Cambridge curriculum with
+                  Singapore Math and Mandarin with a nurturing environment,
+                  enabling students to thrive academically and personally.
+                </p>
+                <p className="mb-4">
+                  We are excited to start our 1st International School campus in
+                  Nonthaburi, Thailand, bringing “Quality International Education
+                  for Everyone” from Singapore, and I look forward to greeting all
+                  of you.
+                </p>
+                <p className="mb-4">
+                  Join us for a school tour to find out more about KBH
+                  (Nonthaburi). Share in our passion for learning, and belief that
+                  quality education should be a right and not a privilege.
+                  Education changes the world, come and see how we do it!
+                </p>
+                <p>Warm regards,</p>
+                <p className="font-semibold">John Fearon</p>
+                <p>Founder, KBH International School</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="relative aspect-square w-full min-w-[200px] max-w-[400px]">
-          <Image
-            src="/images/about/founder.svg"
-            alt="Student learning"
-            fill
-            className="object-cover"
-          />
+          <div className="relative aspect-square w-full min-w-[200px] max-w-[400px]">
+            <Image
+              src="/images/about/founder.svg"
+              alt="Student learning"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -101,7 +103,7 @@ export default function About() {
             </h3>
             <div className="flex h-[1px] bg-gray-300 mb-2 ml-4 flex-1"></div>
           </div>
-          <p>
+          <p className="text-lg">
             Knightsbridge House International School was founded by Mr. John
             Fearon in Singapore and began operations in 2021. It runs the
             Cambridge International School curriculum. Within 3 years, the
@@ -112,7 +114,7 @@ export default function About() {
 
           </p>
           <br></br>
-          <p>
+          <p className="text-lg">
             In Asia, John is also well known as the pioneer of the
             affordable International Schools market niche. He founded the
             Invictus International School brand in 2015 and grew it across
@@ -125,9 +127,17 @@ export default function About() {
 
       {/* Our Mission */}
       <section
-        id="story"
-        className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center"
+        id="mission"
+        className="relative max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center justify-start"
       >
+        {/* Large quote mark background */}
+        <div
+          className="absolute top-[30px] left-[250px] md:top-0 md:left-[300px] lg:top-0 lg:left-[200px] text-[120px] sm:text-[150px] md:text-[200px] lg:text-[250px] 
+                   text-brand-tertiary rotate-45 select-none -z-10 leading-none font-madimi"
+          aria-hidden="true"
+        >
+          "
+        </div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-secondary">
           Our Mission
         </h2>
