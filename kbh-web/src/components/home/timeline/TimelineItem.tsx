@@ -12,7 +12,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   icon,
   description,
   extraContent,
-  iconType = "faded",
+  // iconType = "faded",
   extraSpacing = true,
 }) => (
   <li className={`relative left-[-3.25rem] flex items-start gap-6 ${extraSpacing ? "mt-12" : "mt-6"} timeline-item`}>

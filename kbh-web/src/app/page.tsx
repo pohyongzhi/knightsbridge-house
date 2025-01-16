@@ -229,7 +229,7 @@ export default function Home() {
                 <div className="max-mx-auto text-center">
                     <h2 className="text-5xl font-semibold text-brand-secondary mb-8"> Our <br /> Curriculum </h2>
                     <div className="grid md:grid-cols-2 gap-10 md:gap-10 lg:gap-40 relative">
-                        <div className="bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
+                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md">
                             <Image
                                 src="/images/home/curriculum-globally-recognised-education.jpg"
                                 alt="Globally Recognised Education"
@@ -241,7 +241,7 @@ export default function Home() {
                                 <h3 className="text-lg font-bold text-center text-purple-800"> Globally Recognised Education </h3>
                             </div>
                         </div>
-                        <div className="bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
+                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md">
                             <Image
                                 src="/images/home/curriculum-comprehensive-education.jpg"
                                 alt="Comprehensive Education"
@@ -253,7 +253,7 @@ export default function Home() {
                                 <h3 className="text-lg font-bold text-center text-purple-800"> Comprehensive Education </h3>
                             </div>
                         </div>
-                        <div className="bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
+                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md">
                             <Image
                                 src="/images/home/curriculum-language-support-programs.jpg"
                                 alt="Language Support Programs"
@@ -265,7 +265,7 @@ export default function Home() {
                                 <h3 className="text-lg font-bold text-center text-purple-800"> Language Support Programs </h3>
                             </div>
                         </div>
-                        <div className="bg-purple-100 rounded-[12px] overflow-hidden shadow-md">
+                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md">
                             <Image
                                 src="/images/home/curriculum-trilingual-curriculum.jpg"
                                 alt="Trilingual Education"

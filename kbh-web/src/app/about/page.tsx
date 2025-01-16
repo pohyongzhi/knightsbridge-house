@@ -5,15 +5,16 @@ import { Crosshair } from 'lucide-react';
 export default function About() {
   return (
     <main>
+      {/* Our Aim */}
       <section className="w-full bg-brand">
-        <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
+        <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-12 sm:py-14 md:py-16 lg:py-18">
           <div
             id="our-aim"
-            className="flex flex-col sm:flex-row justify-center items-center gap-5 text-white"
+            className="flex flex-col sm:flex-row justify-center items-center gap-8 text-white"
           >
-            <Crosshair size={150} className="text-brand-secondary" />
+            <Crosshair size={128} className="text-brand-secondary order-last sm:order-first flex-shrink-0" />
             <div className="flex flex-col">
-              <h2 className="text-4xl font-bold mb-1"> Our Aim </h2>
+              <h2 className="text-text-3xl md:text-4xl lg:text-5xl font-bold mb-1"> Our Aim </h2>
               <p className="text-xl">
                 We aim to be a global leader in high-quality, affordable
                 education, ensuring that exceptional learning opportunities are
@@ -24,11 +25,12 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center">
+
+      {/* Founder's Message */}
+      <section className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center bg-brand-tertiary">
         <div className="grid">
-          <h2 className="text-4xl font-semibold text-brand-secondary mb-4">
-            {' '}
-            Founder's Message{' '}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-secondary mb-4">
+            Founder's Message
           </h2>
           <div className="flex flex-col md:flex-row">
             <div className="text-gray-700">
@@ -76,21 +78,28 @@ export default function About() {
         </div>
       </section>
 
+      {/* Our Story */}
       <section
         id="story"
         className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center"
       >
-        <div className="lg:w-2/3">
-          <h2 className="text-3xl font-semibold text-brand-secondary">
-            {' '}
-            Our Story{' '}
+        <div className="place-self-center relative aspect-[9/16] w-full min-w-[300px] max-w-[400px] order-last sm:order-first">
+          <Image
+            src="/images/about/merlion.jpeg"
+            alt="Curriculum"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-secondary">
+            Our Story
           </h2>
           <div className="flex items-center">
             <h3 className="text-xl font-semibold text-gray-800 mb-4 mt-2">
-              {' '}
-              Since 2021{' '}
+              Since 2021
             </h3>
-            <div className="flex h-[1px] bg-gray-300 mb-2 ml-4 w-3/4"></div>
+            <div className="flex h-[1px] bg-gray-300 mb-2 ml-4 flex-1"></div>
           </div>
           <p>
             Knightsbridge House International School was founded by Mr. John
@@ -99,7 +108,12 @@ export default function About() {
             School grew from 5 to 400+ students, the fastest growing
             International School in Singapore, driven by John’s vision of
             education that is both genuinely affordable and provides academic
-            excellence. In Asia, John is also well known as the pioneer of the
+            excellence.
+
+          </p>
+          <br></br>
+          <p>
+            In Asia, John is also well known as the pioneer of the
             affordable International Schools market niche. He founded the
             Invictus International School brand in 2015 and grew it across
             Southeast Asia before a successful exit in 2019 to Sing-Ed Global
@@ -107,19 +121,21 @@ export default function About() {
             property firm, Chip Eng Seng.
           </p>
         </div>
-        <div className="place-self-center relative aspect-[16/9] w-full min-w-[200px] max-w-[450px] overflow-hidden rounded-2xl shadow-xl">
-          <Image
-            src="/images/about/merlion.jpeg"
-            alt="Curriculum"
-            fill
-            className="object-cover"
-          />
-        </div>
       </section>
-      <section id="values" className="mb-12 p-16">
+
+      {/* Our Mission */}
+      <section
+        id="story"
+        className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center"
+      >
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-secondary">
+          Our Mission
+        </h2>
+        <p className="text-xl">To be a global leader in high-quality, affordable education, ensuring that exceptional learning opportunities are accessible to every child, empowering them to achieve their fullest potential.</p>
+      </section>
+      {/* <section id="values" className="mb-12 p-16">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-          {' '}
-          School Values{' '}
+          School Values
         </h2>
         <p className="text-gray-700 leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
@@ -127,9 +143,9 @@ export default function About() {
           nulla quasi illo eos blanditiis officiis eveniet corrupti adipisci
           tenetur velit? Unde.
         </p>
-      </section>
+      </section> */}
 
-      <section id="partnership" className="mb-12 p-16">
+      {/* <section id="partnership" className="mb-12 p-16">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
           {' '}
           Partnerships{' '}
@@ -140,9 +156,10 @@ export default function About() {
           corrupti sint eaque, aut laudantium molestias dignissimos aspernatur,
           sed totam?
         </p>
-      </section>
+      </section> */}
 
-      <section id="leaders" className="mb-12 p-16">
+      {/* Leadership Team */}
+      {/* <section id="leaders" className="mb-12 p-16">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
           {' '}
           Leadership Team{' '}
@@ -153,20 +170,31 @@ export default function About() {
           optio, tempora reiciendis, accusamus laborum accusantium beatae
           cupiditate consectetur facere, officia ipsum repellat?
         </p>
-      </section>
+      </section> */}
 
-      <section id="accreditation" className="mb-12 p-16">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-          {' '}
-          Accreditation{' '}
-        </h2>
-        <p className="text-gray-700 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          delectus, eligendi odit, nisi voluptas illo totam, dolor dolores
-          doloribus ex libero laboriosam eos? Ea obcaecati aliquam hic, sint
-          facilis numquam.
-        </p>
+      {/* Partnership with Pichayasuka */}
+      <section id="partnership" className="w-full bg-brand-tertiary">
+        <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col items-center text-gray-800 gap-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 text-brand-secondary"> Our Partnership with Pichayasuka </h2>
+          <div className="place-self-center relative aspect-[1750/850] w-full min-w-[200px] max-w-[650px] overflow-hidden">
+            <Image
+              src="/images/about/partnership.jpg"
+              alt="Partnership with Pichayasuka photo"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="flex flex-col gap-12 max-w-[850px]">
+            <p className='text-xl'>
+              On 21 Nov 24, KBH partnered with Pichayasuksa School in Thailand to offer the KBH brand of quality international education at an affordable price for everyone. KBH choose to partner with Pichayasuksa School because of the School’s outstanding academic reputation and the Founders’ shared passion for education as a force to improves lives.
+            </p>
+            <div className='flex justify-end'>
+              <p className='text-md text-right max-w-[400px]'>The Founders of Pichayasuksa School are <strong className='font-semibold'>Dr. Thira Sutabutra</strong>, formerly Minister of Agriculture and Cooperatives, and <strong className='font-semibold'>President of Kasetsart University</strong>, and <strong className='font-semibold'>Professor Dr. Sunongnat Sutabutra</strong>, a distinguished leader in education in Thailand.</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
+
 }
