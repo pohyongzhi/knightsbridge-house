@@ -264,7 +264,7 @@ export default function Header() {
 
                             {/* ADMISSIONS */}
                             <NavigationMenuItem className="relative">
-                                <Link href="/admissions" legacyBehavior passHref>
+                                <Link href="/admission" legacyBehavior passHref>
                                     <NavigationMenuTrigger>
                                         Admissions
                                     </NavigationMenuTrigger>
@@ -274,37 +274,25 @@ export default function Header() {
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="Requirements & Process"
-                                                href="/admissions/requirements"
+                                                href="#"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="School Fees"
-                                                href="/admissions/fees"
+                                                href="#"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="Academic Calendar"
-                                                href="/admissions/calendar"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Apply Now"
-                                                href="/admissions/apply"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Book a School Tour"
-                                                href="/admissions/tour"
+                                                href="#"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="FAQs"
-                                                href="/admissions/faqs"
+                                                href="#admission-faq"
                                             />
                                         </li>
                                     </ul>
