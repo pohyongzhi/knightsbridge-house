@@ -5,27 +5,6 @@ import { Crosshair } from 'lucide-react';
 export default function About() {
   return (
     <main>
-      {/* Our Aim */}
-      <section className="w-full bg-brand">
-        <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-12 sm:py-14 md:py-16 lg:py-18">
-          <div
-            id="our-aim"
-            className="flex flex-col sm:flex-row justify-center items-center gap-8 text-white"
-          >
-            <Crosshair size={128} className="text-brand-secondary order-last sm:order-first flex-shrink-0" />
-            <div className="flex flex-col">
-              <h2 className="text-text-3xl md:text-4xl lg:text-5xl font-bold mb-1"> Our Aim </h2>
-              <p className="text-xl">
-                We aim to be a global leader in high-quality, affordable
-                education, ensuring that exceptional learning opportunities are
-                accessible to every child, empowering them to achieve their
-                fullest potential.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Founder's Message */}
       <section className="w-full bg-brand-tertiary">
         <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center bg-brand-tertiary">
@@ -74,7 +53,7 @@ export default function About() {
               src="/images/about/founder.svg"
               alt="Student learning"
               fill
-              className="object-cover"
+              className="object-cover rounded-full"
             />
           </div>
         </div>
@@ -127,16 +106,17 @@ export default function About() {
 
       {/* Our Mission */}
       <section
-        id="mission"
+        id="our-mission"
         className="relative max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col sm:flex-row gap-8 items-center justify-start"
       >
         {/* Large quote mark background */}
         <div
-          className="absolute top-[30px] left-[250px] md:top-0 md:left-[300px] lg:top-0 lg:left-[200px] text-[120px] sm:text-[150px] md:text-[200px] lg:text-[250px] 
-                   text-brand-tertiary rotate-45 select-none -z-10 leading-none font-madimi"
-          aria-hidden="true"
+          className="absolute left-[70px] top-[100px] right-[px] md:top-0 md:left-[300px] lg:top-0 lg:left-[200px] text-[120px] sm:text-[150px] md:text-[200px] lg:text-[250px] 
+          text-brand-tertiary select-none -z-10 leading-none font-madimi gap-0"
+        aria-hidden="true"
+        style={{ letterSpacing: '-0.5em' }}
         >
-          "
+          &#x275B; &#x275B;
         </div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-secondary">
           Our Mission
@@ -152,19 +132,6 @@ export default function About() {
           alias nostrum mollitia, voluptates nam sequi sapiente minus totam
           nulla quasi illo eos blanditiis officiis eveniet corrupti adipisci
           tenetur velit? Unde.
-        </p>
-      </section> */}
-
-      {/* <section id="partnership" className="mb-12 p-16">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-          {' '}
-          Partnerships{' '}
-        </h2>
-        <p className="text-gray-700 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-          vel illo sunt aliquid eum obcaecati sint velit. Est fugiat labore
-          corrupti sint eaque, aut laudantium molestias dignissimos aspernatur,
-          sed totam?
         </p>
       </section> */}
 
@@ -199,7 +166,7 @@ export default function About() {
               On 21 Nov 24, KBH partnered with Pichayasuksa School in Thailand to offer the KBH brand of quality international education at an affordable price for everyone. KBH choose to partner with Pichayasuksa School because of the School’s outstanding academic reputation and the Founders’ shared passion for education as a force to improves lives.
             </p>
             <div className='flex justify-end'>
-              <p className='text-md text-right max-w-[400px]'>The Founders of Pichayasuksa School are <strong className='font-semibold'>Dr. Thira Sutabutra</strong>, formerly Minister of Agriculture and Cooperatives, and <strong className='font-semibold'>President of Kasetsart University</strong>, and <strong className='font-semibold'>Professor Dr. Sunongnat Sutabutra</strong>, a distinguished leader in education in Thailand.</p>
+              <p className='text-md text-right max-w-[480px]'>The Founders of Pichayasuksa School are <strong className='font-semibold'>Dr. Thira Sutabutra</strong>, formerly Minister of Agriculture and Cooperatives, and <strong className='font-semibold'>President of Kasetsart University</strong>, and <strong className='font-semibold'>Professor Dr. Sunongnat Sutabutra</strong>, a distinguished leader in education in Thailand.</p>
             </div>
           </div>
         </div>

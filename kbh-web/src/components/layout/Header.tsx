@@ -126,12 +126,6 @@ export default function Header() {
                                     <ul className="grid gap-3 p-4 w-[250px]">
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="Our Aim"
-                                                href="/about#our-aim"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
                                                 title="Founder's Message"
                                                 href="/about#message"
                                             />
@@ -140,6 +134,12 @@ export default function Header() {
                                             <NavigationMenuChildLink
                                                 title="Our Story"
                                                 href="/about#story"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="Our Mission"
+                                                href="/about#our-mission"
                                             />
                                         </li>
                                         <li>
@@ -272,7 +272,7 @@ export default function Header() {
                                 <NavigationMenuContent>
                                     <ul className="grid gap-3 p-4 w-[250px]">
                                         <li>
-                                            <NavigationMenuChildLink
+                                            <NavigationMenuChildLink 
                                                 title="Requirements & Process"
                                                 href="#"
                                             />
