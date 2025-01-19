@@ -96,10 +96,10 @@ export default function Home() {
                 <h2 className="text-center pb-10 text-4xl font-bold text-brand-secondary">
                     What Knightsbridge House Offers
                 </h2>
-                <ol className="max-w-[600px] mx-auto ml-[3rem] sm:ml-[10rem] md:ml-[13rem] lg:ml-[21rem] flex flex-col pl-[30px] border-l-4 border-brand border-opacity-10 gap-8">
+                <ol className="max-w-[600px] mx-auto ml-[3rem] sm:ml-[10rem] md:ml-[13rem] lg:ml-[21rem] flex flex-col pl-[30px] border-l-4 border-brand-tertiary gap-8">
                     <TimelineItem
                         icon={
-                            <School size={64} className="text-brand-secondary" />
+                            <School size={64} className="text-brand-secondary m-2" />
                         }
                         description={
                             <>
@@ -112,7 +112,7 @@ export default function Home() {
                     />
                     <TimelineItem
                         icon={
-                            <Earth size={64} className="text-brand-secondary" />
+                            <Earth size={64} className="text-brand-secondary m-2" />
                         }
                         description={
                             <>
@@ -126,7 +126,7 @@ export default function Home() {
                     />
                     <TimelineItem
                         icon={
-                            <BookHeart size={64} className="text-brand-secondary" />
+                            <BookHeart size={64} className="text-brand-secondary m-2" />
                         }
                         description={
                             <>
@@ -139,7 +139,7 @@ export default function Home() {
                     />
                     <TimelineItem
                         icon={
-                            <Trophy size={64} className="text-brand-secondary" />
+                            <Trophy size={64} className="text-brand-secondary m-2" />
                         }
                         description={
                             <>
@@ -152,7 +152,7 @@ export default function Home() {
                     />
                     <TimelineItem
                         icon={
-                            <DollarSign size={64} className="text-brand-secondary" />
+                            <DollarSign size={64} className="text-brand-secondary m-2" />
                         }
                         description={
                             <>
@@ -166,7 +166,7 @@ export default function Home() {
                     />
                     <TimelineItem
                         icon={
-                            <Building size={64} className="text-brand-secondary" />
+                            <Building size={64} className="text-brand-secondary m-2" />
                         }
                         description={
                             <>

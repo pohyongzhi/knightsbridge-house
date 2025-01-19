@@ -182,37 +182,37 @@ export default function Header() {
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="Our Curriculum"
-                                                href="/academics/curriculum"
+                                                href="/academics#curriculum"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="Primary Years (Year 1-6)"
-                                                href="/academics/primary"
+                                                href="/academics#primary"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="Lower Secondary (Year 7-8)"
-                                                href="/academics/secondary"
+                                                href="/academics#secondary"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="Language Programs"
-                                                href="/academics/language-programs"
+                                                href="/academics#language-programs"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="STEM Education"
-                                                href="/academics/stem"
+                                                href="/academics#stem"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="International Preparation Program"
-                                                href="/academics/international-preparation-program"
+                                                href="/academics#international-preparation-program"
                                             />
                                         </li>
                                     </ul>
