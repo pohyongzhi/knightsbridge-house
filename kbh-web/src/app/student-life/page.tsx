@@ -69,7 +69,7 @@ export default function StudentLife() {
                 <div className='border border-brand-secondary rounded-2xl p-6 bg-brand text-white text-center h-full'>
                   <div className="place-self-center relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                     <Image
-                      src="images/student-life/campus.png"
+                      src="images/student-life/classroom.jpeg"
                       alt="Modern Classrooms"
                       fill
                       className="object-cover"
@@ -87,7 +87,7 @@ export default function StudentLife() {
                 <div className='border border-brand-secondary rounded-2xl p-6 bg-brand text-white text-center h-full'>
                   <div className="place-self-center relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                     <Image
-                      src="images/student-life/campus.png"
+                      src="images/student-life/science-lab.jpg"
                       alt="Science Lab"
                       fill
                       className="object-cover"
@@ -105,7 +105,7 @@ export default function StudentLife() {
                 <div className='border border-brand-secondary rounded-2xl p-6 bg-brand text-white text-center h-full'>
                   <div className="place-self-center relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                     <Image
-                      src="images/student-life/campus.png"
+                      src="images/student-life/library.jpg"
                       alt="Library"
                       fill
                       className="object-cover"
@@ -123,7 +123,7 @@ export default function StudentLife() {
                 <div className='border border-brand-secondary rounded-2xl p-6 bg-brand text-white text-center h-full'>
                   <div className="place-self-center relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                     <Image
-                      src="images/student-life/campus.png"
+                      src="images/student-life/art-studio.jpg"
                       alt="Art Studio"
                       fill
                       className="object-cover"
@@ -141,7 +141,7 @@ export default function StudentLife() {
                 <div className='border border-brand-secondary rounded-2xl p-6 bg-brand text-white text-center h-full'>
                   <div className="place-self-center relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                     <Image
-                      src="images/student-life/campus.png"
+                      src="images/student-life/sports-field.jpg"
                       alt="Sports Field"
                       fill
                       className="object-cover"
