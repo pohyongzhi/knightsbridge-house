@@ -1,7 +1,10 @@
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
 import {
     NavigationMenu,
     NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuChildLink,
@@ -9,29 +12,101 @@ import {
     NavigationMenuTrigger,
     NavigationMenuViewport,
     navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import Image from "next/image";
+} from '@/components/ui/navigation-menu';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { Button } from '../ui/button';
 
 export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <>
-            <header className="flex justify-between py-5">
+            <header className="flex items-center justify-between py-5 px-5 sm:px-0">
                 <Link href="/" className="flex-shrink-0">
                     <Image
                         src="/images/logo/logo.png"
                         alt="Logo"
-                        width={120}
-                        height={40}
+                        width={150}
+                        height={80}
                         priority
                     />
                 </Link>
+                <div className="md:hidden">
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="p-2"
+                        aria-label="Toggle menu"
+                    >
+                        {isMenuOpen ? (
+                            <X className="h-6 w-6" />
+                        ) : (
+                            <Menu className="h-6 w-6" />
+                        )}
+                    </button>
+
+                    {/* Mobile Menu Panel */}
+                    {isMenuOpen && (
+                        <div className="absolute top-[80px] left-0 right-0 bg-white shadow-lg z-50">
+                            <div className="flex flex-col p-4">
+                                <Link
+                                    href="/"
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Home
+                                </Link>
+
+                                <Link
+                                    href="/about"
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    About Us
+                                </Link>
+
+                                <Link
+                                    href="/academics"
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Academics
+                                </Link>
+
+                                <Link
+                                    href="/student-life"
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Student Life
+                                </Link>
+
+                                <Link
+                                    href="/admissions"
+                                    className="py-2 px-4 hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Admissions
+                                </Link>
+
+                                <Link
+                                    href="/contact"
+                                    className="py-2 px-4 text-primary hover:bg-gray-100"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Contact Us
+                                </Link>
+
+                            </div>
+                        </div>
+                    )}
+
+                </div>
                 <div className="hidden md:flex justify-evenly items-center gap-2">
                     <NavigationMenu>
                         <NavigationMenuList>
-
-                            <NavigationMenuItem>
+                            {/* HOME */}
+                            <NavigationMenuItem className="relative">
                                 <Link href="/" legacyBehavior passHref>
                                     <NavigationMenuLink
                                         className={navigationMenuTriggerStyle()}
@@ -41,182 +116,165 @@ export default function Header() {
                                 </Link>
                             </NavigationMenuItem>
 
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>
-                                    About Us
-                                </NavigationMenuTrigger>
+                            {/* ABOUT US */}
+                            <NavigationMenuItem className="relative">
+                                <Link href="/about" legacyBehavior passHref>
+                                    <NavigationMenuTrigger>
+                                        About Us
+                                    </NavigationMenuTrigger>
+                                </Link>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                    <ul className="grid gap-3 p-4 w-[250px]">
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="Founder's Message"
-                                                href="/about/mission"
-                                                description="Learn about our values and goals"
+                                                href="/about#message"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="Our Story"
-                                                href="/about/story"
+                                                href="/about#story"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="School Values"
-                                                href="/about/values"
+                                                title="Our Mission"
+                                                href="/about#our-mission"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="Partnerships"
-                                                href="/about/partnerships"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Leadership Team"
-                                                href="/about/leaders"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Accrediation"
-                                                href="/about/accrediaition"
+                                                title="Partnership with Pichayasuksa"
+                                                href="/about#partnership"
                                             />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>
-                                    Academic
-                                </NavigationMenuTrigger>
+                            {/* ACADEMICS */}
+                            <NavigationMenuItem className="relative">
+                                <Link href="/academics" legacyBehavior passHref>
+                                    <NavigationMenuTrigger>
+                                        Academics
+                                    </NavigationMenuTrigger>
+                                </Link>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                    <ul className="grid gap-3 p-4 w-[300px]">
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/mission"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Mission
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Learn about our values
-                                                        and goals
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title="Our Curriculum"
+                                                href="/academics#curriculum"
+                                            />
                                         </li>
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/team"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Team
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Meet our leadership team
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title="Primary Years (Year 1-6)"
+                                                href="/academics#primary"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="Lower Secondary (Year 7-8)"
+                                                href="/academics#secondary"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="Language Programs"
+                                                href="/academics#language-programs"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="STEM Education"
+                                                href="/academics#stem"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="International Preparation Program"
+                                                href="/academics#international-preparation-program"
+                                            />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>
-                                    Student Life
-                                </NavigationMenuTrigger>
+                            {/* STUDENT LIFE */}
+                            <NavigationMenuItem className="relative">
+                                <Link href="/student-life" legacyBehavior passHref>
+                                    <NavigationMenuTrigger>
+                                        Student Life
+                                    </NavigationMenuTrigger>
+                                </Link>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                    <ul className="grid gap-3 p-4 w-[300px]">
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/mission"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Mission
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Learn about our values
-                                                        and goals
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title="Our Campus"
+                                                href="#campus"
+                                            />
                                         </li>
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/team"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Team
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Meet our leadership team
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title="School Facilities"
+                                                href="#facilities"
+                                            />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>
-                                    Admission
-                                </NavigationMenuTrigger>
+                            {/* ADMISSIONS */}
+                            <NavigationMenuItem className="relative">
+                                <Link href="/admission" legacyBehavior passHref>
+                                    <NavigationMenuTrigger>
+                                        Admissions
+                                    </NavigationMenuTrigger>
+                                </Link>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-4 w-[400px]">
+                                    <ul className="grid gap-3 p-4 w-[250px]">
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/mission"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Mission
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Learn about our values
-                                                        and goals
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title="Requirements & Process"
+                                                href="#"
+                                            />
                                         </li>
                                         <li>
-                                            <NavigationMenuLink asChild>
-                                                <Link
-                                                    href="/about/team"
-                                                    className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent hover:text-accent-foreground"
-                                                >
-                                                    <div className="text-sm font-medium">
-                                                        Our Team
-                                                    </div>
-                                                    <p className="text-sm text-muted-foreground">
-                                                        Meet our leadership team
-                                                    </p>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                            <NavigationMenuChildLink
+                                                title="School Fees"
+                                                href="#"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="Academic Calendar"
+                                                href="#"
+                                            />
+                                        </li>
+                                        <li>
+                                            <NavigationMenuChildLink
+                                                title="FAQs"
+                                                href="#admission-faq"
+                                            />
                                         </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
+                            {/* CONTACT US*/}
+                            <NavigationMenuItem>
+                                <Link href="/contact" legacyBehavior passHref className="">
+                                    <Button variant="brandSecondary" className="hover:bg-brand-secondary/90 hover:scale-105">
+                                        Contact Us
+                                    </Button>
+                                </Link>
+                            </NavigationMenuItem>
                         </NavigationMenuList>
                         <NavigationMenuViewport />
                     </NavigationMenu>
-                    <Button variant="default" size="default">
-                        Contact us
-                    </Button>
                 </div>
             </header>
         </>
