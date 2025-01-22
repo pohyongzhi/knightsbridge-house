@@ -232,10 +232,10 @@ export default function Header() {
                             School Fees
                         </Link>
                         <Link
-                            href="#"
+                            href="/admission#join-us"
                             className="block px-4 py-2 hover:bg-gray-100"
                         >
-                            Academic Calendar
+                            Join Our Team
                         </Link>
                         <Link
                             href="#admission-faq"

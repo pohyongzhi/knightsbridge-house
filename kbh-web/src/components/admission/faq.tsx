@@ -7,7 +7,7 @@ import {
 
 export default function Admission() {
     return (
-        <section id="admission-faq" className="w-full bg-brand-tertiary">
+        <section id="admission-faq" className="w-full bg-brand-tertiary ">
             <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 flex flex-col gap-12">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-secondary">
                     Frequently Asked Questions
