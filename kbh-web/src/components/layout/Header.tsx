@@ -226,13 +226,7 @@ export default function Header() {
                     </button>
                     <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <Link
-                            href="#"
-                            className="block px-4 py-2 hover:bg-gray-100"
-                        >
-                            Requirements & Process
-                        </Link>
-                        <Link
-                            href="#"
+                            href="/admission#school-fees"
                             className="block px-4 py-2 hover:bg-gray-100"
                         >
                             School Fees
