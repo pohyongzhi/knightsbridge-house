@@ -20,7 +20,7 @@ export default function RootLayout({
                 <div className="relative max-w-screen-xl mx-auto sm:px-6 lg:px-8">
                     <Header />
                 </div>
-                <main className="relativeflex-grow">
+                <main className="relative flex-grow">
                     {children}
                 </main>
                 <div className="relative mx-auto">

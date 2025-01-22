@@ -31,12 +31,62 @@ export default function Header() {
                 >
                     {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                 </button>
+
                 {/* Mobile menu panel */}
+                {isMenuOpen && (
+                    <div className="absolute top-24 left-0 right-0 bg-white shadow-lg py-4 px-6 z-50">
+                        <div className="flex flex-col text-center gap-5 text-lg text-gray-800">
+                            <Link
+                                href="/"
+                                className="hover:text-primary transition-colors "
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Home
+                            </Link>
+
+                            <Link
+                                href="/about"
+                                className="hover:text-primary transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                About Us
+                            </Link>
+
+                            <Link
+                                href="/academics"
+                                className="hover:text-primary transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Academics
+                            </Link>
+
+                            <Link
+                                href="/student-life"
+                                className="hover:text-primary transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Student Life
+                            </Link>
+
+                            <Link
+                                href="/admission"
+                                className="hover:text-primary transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Admissions
+                            </Link>
+
+                            <Link href="/contact" className="hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                                Contact Us
+                            </Link>
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6">
-                <Link href="/" className="hover:text-primary transition-colors">
+            <nav className="hidden md:flex items-center gap-6 font-[550]">
+                <Link href="/" className="hover:text-brand-secondary hover:scale-105 transition-colors duration-100">
                     Home
                 </Link>
 
@@ -57,7 +107,7 @@ export default function Header() {
                             <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                         </svg>
                     </button>
-                    <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-md py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <Link
                             href="/about#message"
                             className="block px-4 py-2 hover:bg-gray-100"
@@ -91,7 +141,7 @@ export default function Header() {
                     onMouseEnter={() => setActiveDropdown('academics')}
                     onMouseLeave={() => setActiveDropdown(null)}
                 >
-                    <button className="flex items-center hover:text-primary transition-colors">
+                    <button className="flex items-center hover:text-brand-secondary transition-colors">
                         Academics
                         <svg
                             className={`ml-1 h-4 w-4 transition-transform group-hover:rotate-180`}
@@ -121,24 +171,88 @@ export default function Header() {
                         >
                             Lower Secondary (Year 7-8)
                         </Link>
+                    </div>
+                </div>
+
+                {/* Student Life Dropdown */}
+                <div
+                    className="relative group"
+                    onMouseEnter={() => setActiveDropdown('student-life')}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                >
+                    <button className="flex items-center hover:text-brand-secondary transition-colors">
+                        Student Life
+                        <svg
+                            className={`ml-1 h-4 w-4 transition-transform group-hover:rotate-180`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                    </button>
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <Link
-                            href="/academics#international-preparation-program"
+                            href="/student-life/#campus"
                             className="block px-4 py-2 hover:bg-gray-100"
                         >
-                            International Preparation Program
+                            Our Campus
+                        </Link>
+                        <Link
+                            href="/student-life/#facilities"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                            Facilities
                         </Link>
                     </div>
                 </div>
 
-                <Link href="/student-life" className="hover:text-primary transition-colors">
-                    Student Life
-                </Link>
+                {/* Admissions Dropdown */}
+                <div
+                    className="relative group"
+                    onMouseEnter={() => setActiveDropdown('admissions')}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                >
+                    <button className="flex items-center hover:text-brand-secondary transition-colors">
+                        Admissions
+                        <svg
+                            className={`ml-1 h-4 w-4 transition-transform group-hover:rotate-180`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                    </button>
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <Link
+                            href="#"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                            Requirements & Process
+                        </Link>
+                        <Link
+                            href="#"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                            School Fees
+                        </Link>
+                        <Link
+                            href="#"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                            Academic Calendar
+                        </Link>
+                        <Link
+                            href="#admission-faq"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                            FAQs
+                        </Link>
+                    </div>
+                </div>
 
-                <Link href="/admissions" className="hover:text-primary transition-colors">
-                    Admissions
-                </Link>
-
-                <Button variant="brandSecondary" className="hover:bg-brand-secondary/90 hover:scale-105">
+                <Button variant="brandSecondary" className="hover:bg-brand-secondary/90 hover:scale-105 font-[550]">
                     Contact Us
                 </Button>
             </nav>
