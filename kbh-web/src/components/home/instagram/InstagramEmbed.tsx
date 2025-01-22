@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import React, { useEffect } from "react";
 interface InstagramEmbedProps {
   embedLink: string; // Accepts the embed link as a prop
 }

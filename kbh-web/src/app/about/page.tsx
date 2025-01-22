@@ -1,7 +1,6 @@
-// Import Statements
 import React from 'react';
 import Image from 'next/image';
-import { Crosshair } from 'lucide-react';
+
 export default function About() {
   return (
     <main>
@@ -113,8 +112,8 @@ export default function About() {
         <div
           className="absolute left-[70px] top-[100px] right-[px] md:top-0 md:left-[300px] lg:top-0 lg:left-[200px] text-[120px] sm:text-[150px] md:text-[200px] lg:text-[250px] 
           text-brand-tertiary select-none -z-10 leading-none font-madimi gap-0"
-        aria-hidden="true"
-        style={{ letterSpacing: '-0.5em' }}
+          aria-hidden="true"
+          style={{ letterSpacing: '-0.5em' }}
         >
           &#x275B; &#x275B;
         </div>
