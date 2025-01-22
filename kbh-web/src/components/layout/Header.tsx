@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Button } from '../ui/button';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -144,26 +145,8 @@ export default function Header() {
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="School Values"
-                                                href="/about#values"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
                                                 title="Partnership with Pichayasuksa"
                                                 href="/about#partnership"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Leadership Team"
-                                                href="/about#leaders"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Accreditation"
-                                                href="/about#accreditation"
                                             />
                                         </li>
                                     </ul>
@@ -230,32 +213,14 @@ export default function Header() {
                                     <ul className="grid gap-3 p-4 w-[300px]">
                                         <li>
                                             <NavigationMenuChildLink
-                                                title="Multicultural Community"
-                                                href="/student-life/multicultural-community"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Extracurricular Activities"
-                                                href="/student-life/extracurricular-activities"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Language & Cultural Enrichment"
-                                                href="/student-life/enrichment"
+                                                title="Our Campus"
+                                                href="#campus"
                                             />
                                         </li>
                                         <li>
                                             <NavigationMenuChildLink
                                                 title="School Facilities"
-                                                href="/student-life/facilities"
-                                            />
-                                        </li>
-                                        <li>
-                                            <NavigationMenuChildLink
-                                                title="Community Engagement"
-                                                href="/student-life/community-engagement"
+                                                href="#facilities"
                                             />
                                         </li>
                                     </ul>
@@ -272,7 +237,7 @@ export default function Header() {
                                 <NavigationMenuContent>
                                     <ul className="grid gap-3 p-4 w-[250px]">
                                         <li>
-                                            <NavigationMenuChildLink 
+                                            <NavigationMenuChildLink
                                                 title="Requirements & Process"
                                                 href="#"
                                             />
@@ -300,13 +265,11 @@ export default function Header() {
                             </NavigationMenuItem>
 
                             {/* CONTACT US*/}
-                            <NavigationMenuItem className="relative">
-                                <Link href="/contact" legacyBehavior passHref>
-                                    <NavigationMenuLink
-                                        className={navigationMenuTriggerStyle()}
-                                    >
+                            <NavigationMenuItem>
+                                <Link href="/contact" legacyBehavior passHref className="">
+                                    <Button variant="brandSecondary" className="hover:bg-brand-secondary/90 hover:scale-105">
                                         Contact Us
-                                    </NavigationMenuLink>
+                                    </Button>
                                 </Link>
                             </NavigationMenuItem>
                         </NavigationMenuList>

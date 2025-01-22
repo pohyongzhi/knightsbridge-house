@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 interface InstagramEmbedProps {
   embedLink: string; // Accepts the embed link as a prop
 }
 
 const InstagramEmbed: React.FC<InstagramEmbedProps> = ({ embedLink }) => {
+
   useEffect(() => {
     // Dynamically load the Instagram embed script
     const script = document.createElement("script");
@@ -15,13 +16,12 @@ const InstagramEmbed: React.FC<InstagramEmbedProps> = ({ embedLink }) => {
     return () => {
       document.body.removeChild(script);
     };
-  }, [embedLink]); // Re-run the effect if the embed link changes
+  }, [embedLink]);
 
   return (
     <blockquote
       className="instagram-media"
-      data-instgrm-permalink={embedLink} // Dynamic embed link
-    //   data-instgrm-captioned // Ensures captions are included
+      data-instgrm-permalink={embedLink}
       data-instgrm-version="14"
       style={{
         background: "#FFF",
@@ -37,7 +37,7 @@ const InstagramEmbed: React.FC<InstagramEmbedProps> = ({ embedLink }) => {
     >
       <div style={{ padding: "16px" }}>
         <a
-          href={embedLink} // Dynamic embed link
+          href={embedLink}
           style={{
             background: "#FFFFFF",
             lineHeight: "0",
@@ -48,9 +48,7 @@ const InstagramEmbed: React.FC<InstagramEmbedProps> = ({ embedLink }) => {
           }}
           target="_blank"
           rel="noopener noreferrer"
-        >
-          {/* Optional: Add fallback content if the embed doesn't load */}
-        </a>
+        />
       </div>
     </blockquote>
   );

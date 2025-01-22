@@ -49,14 +49,15 @@ export default function Home() {
                             academic excellence while developing students' critical thinking, creativity, and character.
                         </p>
                         <div className="mt-8 gap-8 sm:hidden">
-                            <Button
-                                className="hover:scale-110 transition-all duration-100"
-                                variant="brandSecondary"
-                                size="lg"
-                                onClick={() => document.getElementById("what-we-offer")?.scrollIntoView({ behavior: "smooth" })}
-                            >
-                                What We Offer
-                            </Button>
+                            <Link href="/contact">
+                                <Button
+                                    className="hover:scale-110 transition-all duration-100"
+                                    variant="brandSecondary"
+                                    size="lg"
+                                >
+                                    Contact Us
+                                </Button>
+                            </Link>
                         </div>
                         <div className="mt-8 gap-8 hidden sm:flex">
                             <Button
@@ -83,9 +84,11 @@ export default function Home() {
                             >
                                 Our Curriculum
                             </Button>
-                            <Button className="hover:scale-110 transition-all duration-100" variant="brandSecondary" size="lg">
-                                Contact Us
-                            </Button>
+                            <Link href="/contact">
+                                <Button className="hover:scale-110 transition-all duration-100" variant="brandSecondary" size="lg">
+                                    Contact Us
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -183,31 +186,25 @@ export default function Home() {
             {/* SECTION 3: OUR SOCIALS */}
             <section
                 id="our-socials"
-                style={{ backgroundColor: "rgba(180, 135, 225, 0.5)" }}
+                className="bg-brand-tertiary"
             >
                 <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-12 py-20 gap-12 items-center justify-center">
                     {/* Appear only on mobile */}
                     <h2 className="text-left text-5xl font-bold text-brand mb-4 md:hidden"> Our Socials </h2>
-                    <div className="flex justify-center">
-                        <div className="bg-white rounded-lg shadow-lg p-6">
-                            <div className="rounded overflow-hidden">
-                                <InstagramEmbed embedLink="https://www.instagram.com/p/CXNEk9Jv9UM/" />
-                            </div>
-                        </div>
-                    </div>
+
+                    <InstagramEmbed embedLink="https://www.instagram.com/p/CXNEk9Jv9UM/" />
+
                     <div className="flex flex-col px-4 max-w-[600px]">
                         <h2 className="hidden md:block text-3xl md:text-5xl font-bold text-brand mb-4"> Our Socials </h2>
                         <p className="text-xl mb-6 font-medium">
                             Dive into moments from their day-to-day activities, achievements, and special events. Celebrate milestones, explore their learning adventures, and feel closer to their school journey - all at your fingertips!
                         </p>
                         <div className="flex flex-col md:flex-row items-center gap-6">
-                            <Button
-                                className="text-white py-2 px-6 rounded-[12px] hover:scale-110 transition-transform duration-300"
-                                variant="brandSecondary"
-                                style={{ lineHeight: "1.5", height: "40px" }}
-                            >
-                                Call to action
-                            </Button>
+                            <Link href="https://www.instagram.com/knightsbridgehouse/">
+                                <Button variant="brandSecondary">
+                                    Visit Our Instagram
+                                </Button>
+                            </Link>
                             <div className="flex items-center gap-4">
                                 <Link href="https://www.facebook.com/people/Knightsbridge-House-Nonthaburi/61570369682424/" aria-label="Facebook" className="hover:scale-125 transition-transform duration-200">
                                     <Facebook className="w-6 h-6 text-purple-800" />
@@ -228,8 +225,8 @@ export default function Home() {
             <section id="our-curriculum" className="bg-white max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20">
                 <div className="max-mx-auto text-center">
                     <h2 className="text-5xl font-semibold text-brand-secondary mb-8"> Our <br /> Curriculum </h2>
-                    <div className="grid md:grid-cols-2 gap-10 md:gap-10 lg:gap-40 relative">
-                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md">
+                    <div className="grid md:grid-cols-2 gap-10 md:gap-10 lg:gap-40 relative ">
+                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md hover:scale-105 transition-all duration-300">
                             <Image
                                 src="/images/home/curriculum-globally-recognised-education.jpg"
                                 alt="Globally Recognised Education"
@@ -241,7 +238,7 @@ export default function Home() {
                                 <h3 className="text-lg font-bold text-center text-purple-800"> Globally Recognised Education </h3>
                             </div>
                         </div>
-                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md">
+                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md hover:scale-105 transition-all duration-300">
                             <Image
                                 src="/images/home/curriculum-comprehensive-education.jpg"
                                 alt="Comprehensive Education"
@@ -253,7 +250,7 @@ export default function Home() {
                                 <h3 className="text-lg font-bold text-center text-purple-800"> Comprehensive Education </h3>
                             </div>
                         </div>
-                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md">
+                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md hover:scale-105 transition-all duration-300">
                             <Image
                                 src="/images/home/curriculum-language-support-programs.jpg"
                                 alt="Language Support Programs"
@@ -265,7 +262,7 @@ export default function Home() {
                                 <h3 className="text-lg font-bold text-center text-purple-800"> Language Support Programs </h3>
                             </div>
                         </div>
-                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md">
+                        <div className="bg-brand-tertiary rounded-[12px] overflow-hidden shadow-md hover:scale-105 transition-all duration-300">
                             <Image
                                 src="/images/home/curriculum-trilingual-curriculum.jpg"
                                 alt="Trilingual Education"
