@@ -11,7 +11,7 @@ export default function Header() {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     return (
-        <header className="flex items-center justify-between py-5 px-5 sm:px-0">
+        <header className="flex items-center justify-between py-5 px-5 sm:px-0" style = {{ fontFamily: '"Inter", serif' }}>
             <Link href="/" className="flex-shrink-0">
                 <Image
                     src="/images/logo/logo.png"
