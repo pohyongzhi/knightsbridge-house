@@ -88,10 +88,6 @@ export default function Home() {
                                 <Book className="h-5 w-5" />
                                 Our Curriculum
                             </Button>
-                            <Button className="hover:scale-110 transition-all duration-100 font-semibold"  variant="brandSecondary" size="lg" style = {{ fontFamily: '"Inter", serif' }}>
-                                <Phone className="h-5 w-5" />
-                                Contact Us
-                            </Button>
                         </div>
                     </div>
                 </div>

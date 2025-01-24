@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
+import { Phone } from "lucide-react"
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -259,6 +260,7 @@ export default function Header() {
                 </div>
 
                 <Button variant="brandSecondary" className="hover:bg-brand-secondary/90 hover:scale-105 font-[550]">
+                    <Phone className="h-5 w-5" />
                     Contact Us
                 </Button>
             </nav>
