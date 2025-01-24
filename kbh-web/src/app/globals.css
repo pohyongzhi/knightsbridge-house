@@ -78,4 +78,10 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+  nav {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: none;
+    filter: none;
+  }
 }
