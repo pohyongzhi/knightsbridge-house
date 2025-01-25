@@ -2,16 +2,16 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    NavigationMenuViewport,
-    navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+// import {
+//     NavigationMenu,
+//     NavigationMenuContent,
+//     NavigationMenuItem,
+//     NavigationMenuLink,
+//     NavigationMenuList,
+//     NavigationMenuTrigger,
+//     NavigationMenuViewport,
+//     navigationMenuTriggerStyle,
+// } from '@/components/ui/navigation-menu';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 

@@ -86,7 +86,7 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8 font-[550]">
-                <Link href="/" className="hover:text-brand-secondary hover:scale-105 transition-colors duration-100">
+                <Link href="/" className="hover:text-brand-secondary hover:scale-105 transition-colors duration-100 mr-3">
                     Home
                 </Link>
 
@@ -258,9 +258,11 @@ export default function Header() {
                     </div>
                 </div>
 
-                <Button variant="brandSecondary" className="hover:bg-brand-secondary/90 hover:scale-105 font-[550]">
-                    Contact Us
-                </Button>
+                <Link href="/contact" >
+                    <Button variant="brandSecondary" className="hover:bg-brand-secondary/90 hover:scale-110 transition-transform duration-200 font-[550]">
+                        Contact Us
+                    </Button>
+                </Link>
             </nav>
         </header>
     );
