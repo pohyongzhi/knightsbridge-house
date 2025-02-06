@@ -27,6 +27,11 @@ interface Status {
   message?: string;
 }
 
+// Add custom error interface
+interface ContactError extends Error {
+  message: string;
+}
+
 // Add email validation helper
 const isValidEmail = (email: string) => {
   return String(email)
@@ -34,9 +39,9 @@ const isValidEmail = (email: string) => {
     .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 };
 
-// Add phone validation helper
+// Update phone validation helper to allow any length of digits
 const isValidPhone = (phone: string) => {
-  return phone === '' || /^\d{10}$/.test(phone);
+  return phone === '' || /^\d+$/.test(phone);
 };
 
 export default function Contact() {
@@ -65,7 +70,7 @@ export default function Contact() {
     if (formData.phone && !isValidPhone(formData.phone)) {
       setStatus({
         success: false,
-        message: 'Please enter a valid 10-digit phone number',
+        message: 'Please enter a valid phone number (digits only)',
       });
       return;
     }
@@ -94,10 +99,14 @@ export default function Contact() {
       } else {
         throw new Error(result.error || 'Failed to send message');
       }
-    } catch (error) {
+    } catch (error: unknown) {
+      console.error('Error:', error);
+      const contactError = error as ContactError;
       setStatus({
         success: false,
-        message: 'Message failed to send. Please try again later.',
+        message:
+          contactError.message ||
+          'Message failed to send. Please try again later.',
       });
     } finally {
       setButtonText('Send Message');
