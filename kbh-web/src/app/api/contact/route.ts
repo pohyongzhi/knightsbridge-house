@@ -6,25 +6,24 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { firstName, lastName, email, phone, message } = body;
 
-    const contactEmail = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+    const transporter = nodemailer.createTransport({
       port: 465,
-      secure: true,
+      host: 'smtp.gmail.com',
       auth: {
         user: process.env.EMAIL_ADDRESS,
         pass: process.env.EMAIL_PASSWORD,
       },
-      debug: true,
+      secure: true,
     });
 
-    // Add verification promise
+    // Verify connection
     await new Promise((resolve, reject) => {
-      contactEmail.verify(function (error, success) {
+      transporter.verify(function (error, success) {
         if (error) {
-          console.log('Verification error:', error);
+          console.log(error);
           reject(error);
         } else {
-          console.log('Server ready to send');
+          console.log('Server ready to send emails');
           resolve(success);
         }
       });
@@ -33,13 +32,13 @@ export async function POST(request: Request) {
     const name = `${firstName} ${lastName}`;
     const phoneNumber = phone || 'No phone number provided';
 
-    const mail = {
+    const mailData = {
       from: {
         name: name,
         address: process.env.EMAIL_ADDRESS,
       },
-      to: process.env.EMAIL_ADDRESS,
       replyTo: email,
+      to: process.env.EMAIL_ADDRESS,
       subject: 'Contact Form Submission',
       html: `
         <p>You have received a new Contact Us form submission from your website, from <b>${name}</b>.</p>
@@ -51,14 +50,14 @@ export async function POST(request: Request) {
           ${message}</p>`,
     };
 
-    // Add sending promise
+    // Send email with promise
     await new Promise((resolve, reject) => {
-      contactEmail.sendMail(mail, (err, info) => {
+      transporter.sendMail(mailData, (err, info) => {
         if (err) {
-          console.error('Sending error:', err);
+          console.error(err);
           reject(err);
         } else {
-          console.log('Email sent:', info);
+          console.log(info);
           resolve(info);
         }
       });
@@ -68,14 +67,10 @@ export async function POST(request: Request) {
       code: 200,
       message: 'Message sent successfully!',
     });
-  } catch (error: unknown) {
+  } catch (error) {
     console.error('Failed to send email:', error);
-
-    const errorMessage =
-      error instanceof Error ? error.message : 'Unknown error occurred';
-
     return NextResponse.json(
-      { error: `Failed to send email: ${errorMessage}` },
+      { error: `Failed to send email: ${error.message}` },
       { status: 500 }
     );
   }
