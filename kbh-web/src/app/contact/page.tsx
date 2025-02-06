@@ -32,18 +32,6 @@ interface ContactError extends Error {
   message: string;
 }
 
-// Add email validation helper
-const isValidEmail = (email: string) => {
-  return String(email)
-    .toLowerCase()
-    .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-};
-
-// Update phone validation helper to allow any length of digits
-const isValidPhone = (phone: string) => {
-  return phone === '' || /^\d+$/.test(phone);
-};
-
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
