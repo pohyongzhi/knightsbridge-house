@@ -9,7 +9,6 @@ import { Phone } from "lucide-react"
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     return (
         <header className="flex items-center justify-between py-5 px-5 sm:px-0" style = {{ fontFamily: '"Inter", serif' }}>
@@ -94,8 +93,6 @@ export default function Header() {
                 {/* About Us Dropdown */}
                 <div
                     className="relative group"
-                    onMouseEnter={() => setActiveDropdown('about')}
-                    onMouseLeave={() => setActiveDropdown(null)}
                 >
                     <Link
                         href="/about"
@@ -142,8 +139,6 @@ export default function Header() {
                 {/* Academics Dropdown */}
                 <div
                     className="relative group"
-                    onMouseEnter={() => setActiveDropdown('academics')}
-                    onMouseLeave={() => setActiveDropdown(null)}
                 >
                     <Link
                         href="/academics"
@@ -184,8 +179,6 @@ export default function Header() {
                 {/* Student Life Dropdown */}
                 <div
                     className="relative group"
-                    onMouseEnter={() => setActiveDropdown('student-life')}
-                    onMouseLeave={() => setActiveDropdown(null)}
                 >
                     <Link
                         href="/student-life"
@@ -220,8 +213,6 @@ export default function Header() {
                 {/* Admissions Dropdown */}
                 <div
                     className="relative group"
-                    onMouseEnter={() => setActiveDropdown('admissions')}
-                    onMouseLeave={() => setActiveDropdown(null)}
                 >
                     <Link
                         href="/admission"

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import TimelineItem from "@/components/home/timeline/TimelineItem";
 import InstagramEmbed from "@/components/home/instagram/InstagramEmbed";
-import { BookHeart, Building, DollarSign, Earth, Instagram, School, Trophy, Facebook, Linkedin, ChevronUp, ArrowRight, Phone, Book, Users, School2 } from "lucide-react";
+import { BookHeart, Building, DollarSign, Earth, Instagram, School, Trophy, Facebook, Linkedin, ChevronUp, ArrowRight, Book, Users, School2 } from "lucide-react";
 
 export default function Home() {
     const [showScrollToTop, setShowScrollToTop] = useState(false);

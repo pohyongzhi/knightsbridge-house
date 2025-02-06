@@ -49,14 +49,14 @@ export default function Contact() {
         e.preventDefault();
         console.log(JSON.stringify(formData));
         setButtonText("Sending...");
-        let response = await fetch("http://localhost:3001/contact", {
+        const response = await fetch("http://localhost:3001/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
         });
-        let result = await response.json();
+        const result = await response.json();
         setButtonText("Send Message");
         setFormData({firstName: "", lastName: "", email: "", phone: "", message: ""});
         if (result.code === 200) {
