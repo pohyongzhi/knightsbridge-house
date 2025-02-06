@@ -58,24 +58,8 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
-    if (!isValidEmail(formData.email)) {
-      setStatus({
-        success: false,
-        message: 'Please enter a valid email address',
-      });
-      return;
-    }
-
-    if (formData.phone && !isValidPhone(formData.phone)) {
-      setStatus({
-        success: false,
-        message: 'Please enter a valid phone number (digits only)',
-      });
-      return;
-    }
-
     setButtonText('Sending...');
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -204,7 +188,6 @@ export default function Contact() {
                 setFormData({ ...formData, email: e.target.value })
               }
               required
-              pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
             <div>
