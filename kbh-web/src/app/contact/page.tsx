@@ -18,7 +18,7 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  phone?: string;
+  phone: string;
   message: string;
 }
 
@@ -187,7 +187,7 @@ export default function Contact() {
                 phone number below.
               </label>
               <input
-                type="number"
+                type="text"
                 name="phone"
                 placeholder="Phone Number"
                 value={formData.phone}
