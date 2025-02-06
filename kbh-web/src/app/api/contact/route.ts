@@ -17,12 +17,29 @@ export async function POST(request: Request) {
       debug: true,
     });
 
+    // Add verification promise
+    await new Promise((resolve, reject) => {
+      contactEmail.verify(function (error, success) {
+        if (error) {
+          console.log('Verification error:', error);
+          reject(error);
+        } else {
+          console.log('Server ready to send');
+          resolve(success);
+        }
+      });
+    });
+
     const name = `${firstName} ${lastName}`;
     const phoneNumber = phone || 'No phone number provided';
 
     const mail = {
-      from: name,
+      from: {
+        name: name,
+        address: process.env.EMAIL_ADDRESS,
+      },
       to: process.env.EMAIL_ADDRESS,
+      replyTo: email,
       subject: 'Contact Form Submission',
       html: `
         <p>You have received a new Contact Us form submission from your website, from <b>${name}</b>.</p>
@@ -34,16 +51,31 @@ export async function POST(request: Request) {
           ${message}</p>`,
     };
 
-    await contactEmail.sendMail(mail);
+    // Add sending promise
+    await new Promise((resolve, reject) => {
+      contactEmail.sendMail(mail, (err, info) => {
+        if (err) {
+          console.error('Sending error:', err);
+          reject(err);
+        } else {
+          console.log('Email sent:', info);
+          resolve(info);
+        }
+      });
+    });
 
     return NextResponse.json({
       code: 200,
       message: 'Message sent successfully!',
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Failed to send email:', error);
+
+    const errorMessage =
+      error instanceof Error ? error.message : 'Unknown error occurred';
+
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: `Failed to send email: ${errorMessage}` },
       { status: 500 }
     );
   }
