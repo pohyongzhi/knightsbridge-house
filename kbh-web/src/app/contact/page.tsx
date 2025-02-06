@@ -1,7 +1,7 @@
 'use client';
 
 // Import Statements
-import React, { useEffect, FormEvent } from 'react';
+import React, { FormEvent } from 'react';
 import { useState } from 'react';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -27,13 +27,19 @@ interface Status {
   message?: string;
 }
 
-export default function Contact() {
-  useEffect(() => {
-    fetch('http://localhost:3001/api')
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
+// Add email validation helper
+const isValidEmail = (email: string) => {
+  return String(email)
+    .toLowerCase()
+    .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+};
 
+// Add phone validation helper
+const isValidPhone = (phone: string) => {
+  return phone === '' || /^\d{10}$/.test(phone);
+};
+
+export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -47,37 +53,55 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log(JSON.stringify(formData));
+
+    if (!isValidEmail(formData.email)) {
+      setStatus({
+        success: false,
+        message: 'Please enter a valid email address',
+      });
+      return;
+    }
+
+    if (formData.phone && !isValidPhone(formData.phone)) {
+      setStatus({
+        success: false,
+        message: 'Please enter a valid 10-digit phone number',
+      });
+      return;
+    }
+
     setButtonText('Sending...');
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    const result = await response.json();
-    setButtonText('Send Message');
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
-    if (result.code === 200) {
-      setStatus({ success: true, message: 'Message sent successfully!' });
-      setTimeout(() => {
-        setStatus({});
-      }, 3000);
-    } else {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus({ success: true, message: result.message });
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      } else {
+        throw new Error(result.error || 'Failed to send message');
+      }
+    } catch (error) {
       setStatus({
         success: false,
         message: 'Message failed to send. Please try again later.',
       });
-      setTimeout(() => {
-        setStatus({});
-      }, 3000);
+    } finally {
+      setButtonText('Send Message');
+      setTimeout(() => setStatus({}), 3000);
     }
   };
 
@@ -163,7 +187,7 @@ export default function Contact() {
               />
             </div>
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="Email Address"
               value={formData.email}
@@ -171,6 +195,7 @@ export default function Contact() {
                 setFormData({ ...formData, email: e.target.value })
               }
               required
+              pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
             <div>
