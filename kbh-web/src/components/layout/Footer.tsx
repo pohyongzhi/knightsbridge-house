@@ -7,7 +7,7 @@ import { Facebook, Instagram, Mail, Linkedin, MapPin, Calendar, Clock } from "lu
 
 export default function Footer() {
     return (
-        <footer className="bg-brand-secondary text-white py-10 grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
+        <footer className="bg-brand-secondary text-white py-10 grid grid-cols-1 md:grid-cols-4 gap-8 px-8" style = {{ fontFamily: '"Inter", serif' }}>
             {/* KBH LOGO AND NAME SECTION */}
             <div className="flex flex-col items-center">
                 <Image
@@ -89,9 +89,9 @@ export default function Footer() {
                 <h3 className="text-lg font-semibold">LOCATE US ON GOOGLE MAPS</h3>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.5182413677367!2d100.51618627571231!3d13.927719786482715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e284bf07b056ef%3A0x48d77e1a588c7734!2sPichaya%20Suksa%20School!5e0!3m2!1sen!2ssg!4v1737354656402!5m2!1sen!2ssg"
-                    width="100%"
-                    height="150"
-                    className="rounded-lg border-0"
+                    width="90%"
+                    height="200"
+                    className="rounded-[12px] border-0"
                     loading="lazy"
                     allowFullScreen={true}
                     referrerPolicy="no-referrer-when-downgrade"

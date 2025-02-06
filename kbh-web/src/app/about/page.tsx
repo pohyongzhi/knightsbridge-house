@@ -12,7 +12,7 @@ export default function About() {
               Founder's Message
             </h2>
             <div className="flex flex-col md:flex-row">
-              <div className="text-gray-700 text-lg">
+              <div className="text-gray-800 text-lg">
                 <p className="mb-4">
                   As a lifelong entrepreneur and a father, I have always been
                   driven by the belief that quality education should be both

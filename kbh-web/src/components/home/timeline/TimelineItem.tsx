@@ -15,7 +15,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   // iconType = "faded",
   extraSpacing = true,
 }) => (
-  <li className={`relative left-[-60px] flex items-start gap-6 ${extraSpacing ? "mt-12" : "mt-6"} timeline-item`}>
+  <li className={`relative left-[-60px] flex items-start gap- ${extraSpacing ? "mt-12" : "mt-6"} timeline-item`}>
     {/* Icon */}
     <span
       className={`absolute flex my-auto items-center justify-center w-14 h-14 rounded-full bg-white
@@ -24,7 +24,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       {icon}
     </span>
     {/* Content */}
-    <div className="ml-12 pl-4">{description}</div>
+    <div className="ml-14 pl-4">{description}</div>
     {extraContent && <div className="mt-4">{extraContent}</div>}
   </li>
 );

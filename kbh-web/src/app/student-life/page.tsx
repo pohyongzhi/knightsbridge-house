@@ -13,11 +13,11 @@ import Image from 'next/image';
 export default function StudentLife() {
   return (
     <main>
-      <section id="campus" className="w-full bg-brand">
+      <section id="campus" className="w-full bg-brand-tertiary">
         <div className="max-w-screen-xl mx-auto px-8 sm:px-10 lg:px-12 py-20 grid grid-col-1 md:grid-cols-2 gap-12 relative">
-          <div className="flex flex-col justify-center text-white gap-4">
+          <div className="flex flex-col justify-center text-brand-secondary gap-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold">Our Campus</h2>
-            <p >
+            <p className="text-gray-800">
               Knightsbridge House's Nonthaburi campus in Thailand is located
               in the suburbs of Bangkok, offering a spacious and green
               environment.
