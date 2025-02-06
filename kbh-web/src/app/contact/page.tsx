@@ -168,7 +168,7 @@ export default function Contact() {
               />
             </div>
             <input
-              type="email"
+              type="text"
               name="email"
               placeholder="Email Address"
               value={formData.email}
